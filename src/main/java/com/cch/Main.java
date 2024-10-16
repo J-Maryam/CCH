@@ -2,6 +2,7 @@ package com.cch;
 
 import org.hibernate.SessionFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -11,8 +12,9 @@ public class Main {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(com.cch.config.AppConfig.class);
         SessionFactory sessionFactory = (SessionFactory) context.getBean("SessionFactory.class");
-        System.out.printf("Hello and welcome!");
+        System.out.print("Hello and welcome!");
 
     }
 }
