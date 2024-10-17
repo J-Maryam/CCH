@@ -1,52 +1,58 @@
 package com.cch.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
+@Data
 @Entity
-public class Cyclist implements Serializable {
-
-    @Getter
-    @Setter
+@NoArgsConstructor
+public class Cyclist {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
 
-    @NotBlank
+    @NotBlank(message="le prenom ne doit pas etre vide")
     @Size(min = 3, max = 50)
     private String fName;
 
-    @NotBlank
+    @NotBlank(message="le nom ne doit pas etre vide")
     @Size(min = 3, max = 50)
     private String lName;
 
-    @NotBlank
+    @NotBlank(message="la nationnalite ne doit pas etre vide")
     @Size(min = 3, max = 50)
     private String nationality;
 
-    @NotNull
-    @Size(min = 2, max = 50)
-    private int age;
+    @NotNull(message = "la date de naissance ne doit etre null")
+    @Past(message = "La date doit etre dans le passe")
+    private LocalDate birthDate;
 
-    public Cyclist() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    private Team team;
 
-    public Cyclist(String fName, String lName, String nationality, int age) {
+    @OneToMany(mappedBy = "cyclist", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<StageResult> stageResults = new HashSet<>();
+
+    @OneToMany(mappedBy = "cyclist", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<GeneralResult> generalResults = new HashSet<>();
+
+    public Cyclist(String fName, String lName, String nationality, LocalDate birthDate, Team team) {
         this.fName = fName;
         this.lName = lName;
         this.nationality = nationality;
-        this.age = age;
+        this.birthDate = birthDate;
+        this.team = team;
     }
 
 }
