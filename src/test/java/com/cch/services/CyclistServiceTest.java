@@ -11,6 +11,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -30,7 +31,7 @@ public class CyclistServiceTest {
     }
 
     @Test
-    public void testSaveCyclist() {
+    public void testSaveCyclist_Success() {
         Team team = new Team("Team A");
 
         Cyclist cyclist = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2000, 5, 19), team);
@@ -45,6 +46,24 @@ public class CyclistServiceTest {
         assertEquals("USA", savedCyclist.getNationality());
         assertEquals(LocalDate.of(2000,5,19), savedCyclist.getBirthDate());
         assertEquals("Team A", savedCyclist.getTeam().getTeam());
+        verify(cyclistRepository, times(1)).save(cyclist);
+    }
+
+    @Test
+    public void testSaveCyclist_EmptyRepository() {
+        Cyclist cyclist = new Cyclist();
+        cyclist.setFName("Anna");
+        cyclist.setLName("Smith");
+        cyclist.setNationality("Canada");
+        cyclist.setBirthDate(LocalDate.of(1995, 3, 15));
+
+        when(cyclistRepository.save(cyclist)).thenReturn(cyclist);
+        when(cyclistRepository.findAll()).thenReturn(new ArrayList<>());
+        
+        Cyclist savedCyclist = cyclistService.save(cyclist);
+
+        assertNotNull(savedCyclist);
+        assertEquals("Anna", savedCyclist.getFName());
         verify(cyclistRepository, times(1)).save(cyclist);
     }
 }
