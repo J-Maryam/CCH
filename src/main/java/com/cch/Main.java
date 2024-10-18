@@ -49,18 +49,29 @@ public class Main {
 //            }
 //        }
 
-        Long cyclistId = 2L;
-        Optional<Cyclist> foundCyclist = cyclistService.findById(cyclistId);
-        if(foundCyclist.isPresent()) {
-            Cyclist c = foundCyclist.get();
-            System.out.println("Cyclist found :");
-            System.out.println("First Name: " + c.getFName());
-            System.out.println("Last Name: " + c.getLName());
-            System.out.println("Nationality: " + c.getNationality());
-            System.out.println("Birth Date: " + c.getBirthDate());
-            System.out.println("Team: " + c.getTeam().getTeam());
-        }else {
-            System.out.println("Cyclist not found");
+//        Long cyclistId = 2L;
+//        Optional<Cyclist> foundCyclist = cyclistService.findById(cyclistId);
+//        if(foundCyclist.isPresent()) {
+//            Cyclist c = foundCyclist.get();
+//            System.out.println("Cyclist found :");
+//            System.out.println("First Name: " + c.getFName());
+//            System.out.println("Last Name: " + c.getLName());
+//            System.out.println("Nationality: " + c.getNationality());
+//            System.out.println("Birth Date: " + c.getBirthDate());
+//            System.out.println("Team: " + c.getTeam().getTeam());
+//        }else {
+//            System.out.println("Cyclist not found");
+//        }
+
+        Long cyclistIdToDelete = 1L;
+
+        Optional<Cyclist> cyclistToDelete = cyclistService.findById(cyclistIdToDelete);
+
+        if (cyclistToDelete.isPresent()) {
+            cyclistService.deleteById(cyclistIdToDelete);
+            System.out.println("Cyclist with ID " + cyclistIdToDelete + " deleted successfully.");
+        } else {
+            System.out.println("Cyclist with ID " + cyclistIdToDelete + " not found.");
         }
 
     }
