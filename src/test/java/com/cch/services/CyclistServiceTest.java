@@ -15,6 +15,7 @@ import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -133,5 +134,20 @@ public class CyclistServiceTest {
         assertEquals("Team A", cyclists.get(1).getTeam().getTeam());
 
         verify(cyclistRepository, times(1)).findAll();
+    }
+
+    @Test
+    public void testFindById_CycleExists() {
+        Long cyclistId = 1L;
+        Cyclist cyclist = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2000, 5, 19), null);
+
+        when(cyclistRepository.findById(cyclistId)).thenReturn(Optional.of(cyclist));
+
+        Optional<Cyclist> foundCyclist = cyclistService.findById(cyclistId);
+        assertTrue(foundCyclist.isPresent());
+        assertEquals("Jean", foundCyclist.get().getFName());
+        assertEquals("Russo", foundCyclist.get().getLName());
+        assertEquals(cyclist.getNationality(), foundCyclist.get().getNationality(), "Nationality should match");
+        assertEquals(cyclist.getBirthDate(), foundCyclist.get().getBirthDate(), "Birth date should match");
     }
 }

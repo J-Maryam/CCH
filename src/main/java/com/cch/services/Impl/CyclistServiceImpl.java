@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Validated
@@ -31,6 +32,11 @@ public class CyclistServiceImpl implements CyclistService {
     @Override
     public List<Cyclist> findAll() {
         return cyclistRepository.findAll();
+    }
+
+    @Override
+    public Optional<Cyclist> findById(Long id) {
+        return cyclistRepository.findById(id);
     }
 
 }
