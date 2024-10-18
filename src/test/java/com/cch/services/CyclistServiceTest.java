@@ -150,4 +150,12 @@ public class CyclistServiceTest {
         assertEquals(cyclist.getNationality(), foundCyclist.get().getNationality(), "Nationality should match");
         assertEquals(cyclist.getBirthDate(), foundCyclist.get().getBirthDate(), "Birth date should match");
     }
+
+    @Test
+    public void testFindById_CyclistDoesNotExist() {
+        Long cyclistId = 2L;
+        when(cyclistRepository.findById(cyclistId)).thenReturn(Optional.empty());
+        Optional<Cyclist> foundCyclist = cyclistService.findById(cyclistId);
+        assertFalse(foundCyclist.isPresent(),  "Cyclist should not be found");
+    }
 }

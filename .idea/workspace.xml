@@ -80,7 +80,7 @@
       <recent name="com.cch.services.Impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CyclistServiceTest.testFindById_CycleExists">
+  <component name="RunManager" selected="JUnit.CyclistServiceTest.testFindById_CyclistDoesNotExist">
     <configuration name="CyclistServiceTest.findAllCyclists_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
@@ -113,6 +113,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CyclistServiceTest.testFindById_CyclistDoesNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cch.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cch.services" />
+      <option name="MAIN_CLASS_NAME" value="com.cch.services.CyclistServiceTest" />
+      <option name="METHOD_NAME" value="testFindById_CyclistDoesNotExist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CyclistServiceTest.testSaveCyclist_InvalidBirthDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
@@ -124,22 +140,6 @@
       <option name="PACKAGE_NAME" value="com.cch.services" />
       <option name="MAIN_CLASS_NAME" value="com.cch.services.CyclistServiceTest" />
       <option name="METHOD_NAME" value="testSaveCyclist_InvalidBirthDate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CyclistServiceTest.testSaveCyclist_InvalidFirstName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CCH" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cch.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.cch.services" />
-      <option name="MAIN_CLASS_NAME" value="com.cch.services.CyclistServiceTest" />
-      <option name="METHOD_NAME" value="testSaveCyclist_InvalidFirstName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -163,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CyclistServiceTest.testFindById_CyclistDoesNotExist" />
         <item itemvalue="JUnit.CyclistServiceTest.testFindById_CycleExists" />
         <item itemvalue="JUnit.CyclistServiceTest.findAllCyclists_Success" />
         <item itemvalue="JUnit.CyclistServiceTest.testSaveCyclist_Success" />
         <item itemvalue="JUnit.CyclistServiceTest.testSaveCyclist_InvalidBirthDate" />
-        <item itemvalue="JUnit.CyclistServiceTest.testSaveCyclist_InvalidFirstName" />
       </list>
     </recent_temporary>
   </component>
