@@ -8,29 +8,34 @@ import com.cch.services.CyclistService;
 import com.cch.services.TeamService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+@Configuration
+@ComponentScan(basePackages = "com.cch")
 public class Main {
     public static void main(String[] args) {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
         TeamService teamService = context.getBean(TeamService.class);
         CyclistService cyclistService = context.getBean(CyclistService.class);
 
-//        Team team = new Team("Team B");
-//        teamService.save(team);
-//
-//        Cyclist cyclist = new Cyclist("Sara", "Perles", "USA", LocalDate.of(2000, 5, 19), team);
-//        Cyclist savedCyclist = cyclistService.save(cyclist);
-//
-//        if (savedCyclist != null && savedCyclist.getId() != null) {
-//            System.out.println("Cyclist saved successfully with ID: " + savedCyclist.getId());
-//        } else {
-//            System.out.println("Failed to save cyclist.");
-//        }
+        Team team = new Team("Team F");
+        teamService.save(team);
+
+        Cyclist cyclist = new Cyclist("Marry", "Perles", "USA", LocalDate.of(2000, 5, 19), team);
+        Cyclist savedCyclist = cyclistService.save(cyclist);
+
+        if (savedCyclist != null && savedCyclist.getId() != null) {
+            System.out.println("Cyclist saved successfully with ID: " + savedCyclist.getId());
+        } else {
+            System.out.println("Failed to save cyclist.");
+        }
 
 
 //        List<Cyclist> cyclists = cyclistService.findAll();
@@ -63,16 +68,16 @@ public class Main {
 //            System.out.println("Cyclist not found");
 //        }
 
-        Long cyclistIdToDelete = 1L;
-
-        Optional<Cyclist> cyclistToDelete = cyclistService.findById(cyclistIdToDelete);
-
-        if (cyclistToDelete.isPresent()) {
-            cyclistService.deleteById(cyclistIdToDelete);
-            System.out.println("Cyclist with ID " + cyclistIdToDelete + " deleted successfully.");
-        } else {
-            System.out.println("Cyclist with ID " + cyclistIdToDelete + " not found.");
-        }
+//        Long cyclistIdToDelete = 1L;
+//
+//        Optional<Cyclist> cyclistToDelete = cyclistService.findById(cyclistIdToDelete);
+//
+//        if (cyclistToDelete.isPresent()) {
+//            cyclistService.deleteById(cyclistIdToDelete);
+//            System.out.println("Cyclist with ID " + cyclistIdToDelete + " deleted successfully.");
+//        } else {
+//            System.out.println("Cyclist with ID " + cyclistIdToDelete + " not found.");
+//        }
 
     }
 }

@@ -12,20 +12,19 @@ import org.springframework.validation.annotation.Validated;
 import java.util.List;
 import java.util.Optional;
 
-@Service
-@Validated
+
+@Transactional
 public class CyclistServiceImpl implements CyclistService {
 
     private final CyclistRepository cyclistRepository;
 
-    @Autowired
+
     public CyclistServiceImpl(CyclistRepository cyclistRepository) {
         this.cyclistRepository = cyclistRepository;
     }
 
     @Override
-    @Transactional
-    public Cyclist save(@Valid Cyclist cyclist) {
+    public Cyclist save(Cyclist cyclist) {
         return cyclistRepository.save(cyclist);
     }
 

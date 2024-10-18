@@ -1,5 +1,12 @@
 package com.cch.config;
 
+import com.cch.entities.Team;
+import com.cch.repositories.CyclistRepository;
+import com.cch.repositories.TeamRepository;
+import com.cch.services.CyclistService;
+import com.cch.services.Impl.CyclistServiceImpl;
+import com.cch.services.Impl.TeamServiceImpl;
+import com.cch.services.TeamService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +21,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@ComponentScan(basePackages = "com.cch")
+//@ComponentScan(basePackages = "com.cch")
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "com.cch.repositories")
@@ -59,5 +66,14 @@ public class AppConfig {
         properties.setProperty("hibernate.show_sql", "true");
         properties.setProperty("hibernate.format_sql", "true");
         return properties;
+    }
+    @Bean
+    public CyclistService cyclistService(CyclistRepository cyclistRepository) {
+        return new CyclistServiceImpl(cyclistRepository);
+    }
+
+    @Bean
+    public TeamService teamService(TeamRepository teamRepository) {
+        return new TeamServiceImpl(teamRepository);
     }
 }
