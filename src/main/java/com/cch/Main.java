@@ -2,8 +2,10 @@ package com.cch;
 
 
 import com.cch.config.AppConfig;
+import com.cch.entities.Competition;
 import com.cch.entities.Cyclist;
 import com.cch.entities.Team;
+import com.cch.services.CompetitionService;
 import com.cch.services.CyclistService;
 import com.cch.services.TeamService;
 import org.springframework.context.ApplicationContext;
@@ -20,22 +22,24 @@ import java.util.Optional;
 public class Main {
     public static void main(String[] args) {
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
-        TeamService teamService = context.getBean(TeamService.class);
-        CyclistService cyclistService = context.getBean(CyclistService.class);
+//        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+//        TeamService teamService = context.getBean(TeamService.class);
+//        CyclistService cyclistService = context.getBean(CyclistService.class);
 
-        Team team = new Team("Team F");
-        teamService.save(team);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
+        CompetitionService competitionService = context.getBean(CompetitionService.class);
 
-        Cyclist cyclist = new Cyclist("Marry", "Perles", "USA", LocalDate.of(2000, 5, 19), team);
-        Cyclist savedCyclist = cyclistService.save(cyclist);
-
-        if (savedCyclist != null && savedCyclist.getId() != null) {
-            System.out.println("Cyclist saved successfully with ID: " + savedCyclist.getId());
-        } else {
-            System.out.println("Failed to save cyclist.");
-        }
+//        Team team = new Team("Team F");
+//        teamService.save(team);
+//
+//        Cyclist cyclist = new Cyclist("Marry", "Perles", "USA", LocalDate.of(2000, 5, 19), team);
+//        Cyclist savedCyclist = cyclistService.save(cyclist);
+//
+//        if (savedCyclist != null && savedCyclist.getId() != null) {
+//            System.out.println("Cyclist saved successfully with ID: " + savedCyclist.getId());
+//        } else {
+//            System.out.println("Failed to save cyclist.");
+//        }
 
 
 //        List<Cyclist> cyclists = cyclistService.findAll();
@@ -79,5 +83,12 @@ public class Main {
 //            System.out.println("Cyclist with ID " + cyclistIdToDelete + " not found.");
 //        }
 
+        Competition competition1 = new Competition("Tour de France", "France", LocalDate.of(2024, 7, 1), LocalDate.of(2024, 7, 23));
+        Competition savedCompetition = competitionService.saveCompetition(competition1);
+        if(savedCompetition != null) {
+            System.out.println("Competition saved successfully with ID: " + savedCompetition.getId());
+        }else {
+            System.out.println("Failed to save competition.");
+        }
     }
 }
