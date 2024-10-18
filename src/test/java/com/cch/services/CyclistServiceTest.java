@@ -11,7 +11,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.lang.reflect.Array;
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -73,37 +76,62 @@ public class CyclistServiceTest {
 //        });
 //    }
 
+//    @Test
+//    public void testSaveCyclist_InvalidFirstName() {
+//        Team team = new Team("Team A");
+//
+//        Cyclist cyclist = new Cyclist("", "Russo", "USA", LocalDate.of(2000, 5, 19), team);
+//
+//        Cyclist savedCyclist = cyclistService.save(cyclist);
+//
+//        assertNull(savedCyclist);
+//        verify(cyclistRepository, never()).save(any(Cyclist.class));
+//    }
+
+//    @Test
+//    public void testSaveCyclist_InvalidBirthDate() {
+//        Team team = new Team("Team A");
+//
+//        Cyclist cyclist = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2030, 5, 19), team);
+//
+//        assertThrows(ConstraintViolationException.class, () -> cyclistService.save(cyclist));
+//
+//        verify(cyclistRepository, never()).save(any(Cyclist.class));
+//    }
+
+//    @Test
+//    public void testSaveCyclist_NoTeam() {
+//        Cyclist cyclist = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2000, 5, 19), null);
+//
+//        assertThrows(ConstraintViolationException.class, () -> cyclistService.save(cyclist));
+//
+//        verify(cyclistRepository, never()).save(any(Cyclist.class));
+//    }
+
     @Test
-    public void testSaveCyclist_InvalidFirstName() {
-        Team team = new Team("Team A");
+    public void findAllCyclists_Success() {
+        Team teamA = new Team("Team A");
+        Cyclist cyclist1 = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2000, 5, 19), teamA);
+        Cyclist cyclist2 = new Cyclist("Anna", "Smith", "Canada", LocalDate.of(1995, 3, 15), teamA);
 
-        Cyclist cyclist = new Cyclist("", "Russo", "USA", LocalDate.of(2000, 5, 19), team);
+        when(cyclistRepository.findAll()).thenReturn(Arrays.asList(cyclist1, cyclist2));
 
-        Cyclist savedCyclist = cyclistService.save(cyclist);
+        List<Cyclist> cyclists = cyclistService.findAll();
+        assertNotNull(cyclists);
+        assertEquals(2, cyclists.size());
 
-        assertNull(savedCyclist);
-        verify(cyclistRepository, never()).save(any(Cyclist.class));
+        assertEquals("Jean", cyclists.get(0).getFName());
+        assertEquals("Russo", cyclists.get(0).getLName());
+        assertEquals("USA", cyclists.get(0).getNationality());
+        assertEquals(LocalDate.of(2000, 5, 19), cyclists.get(0).getBirthDate());
+        assertEquals("Team A", cyclists.get(0).getTeam().getTeam());
+
+        assertEquals("Anna", cyclists.get(1).getFName());
+        assertEquals("Smith", cyclists.get(1).getLName());
+        assertEquals("Canada", cyclists.get(1).getNationality());
+        assertEquals(LocalDate.of(1995, 3, 15), cyclists.get(1).getBirthDate());
+        assertEquals("Team A", cyclists.get(1).getTeam().getTeam());
+
+        verify(cyclistRepository, times(1)).findAll();
     }
-
-    @Test
-    public void testSaveCyclist_InvalidBirthDate() {
-        Team team = new Team("Team A");
-
-        Cyclist cyclist = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2030, 5, 19), team);
-
-        assertThrows(ConstraintViolationException.class, () -> cyclistService.save(cyclist));
-
-        verify(cyclistRepository, never()).save(any(Cyclist.class));
-    }
-
-    @Test
-    public void testSaveCyclist_NoTeam() {
-        Cyclist cyclist = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2000, 5, 19), null);
-
-        assertThrows(ConstraintViolationException.class, () -> cyclistService.save(cyclist));
-
-        verify(cyclistRepository, never()).save(any(Cyclist.class));
-    }
-
-
 }

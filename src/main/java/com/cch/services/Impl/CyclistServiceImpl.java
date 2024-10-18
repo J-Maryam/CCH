@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
+import java.util.List;
+
 @Service
 @Validated
 public class CyclistServiceImpl implements CyclistService {
@@ -25,4 +27,10 @@ public class CyclistServiceImpl implements CyclistService {
     public Cyclist save(@Valid Cyclist cyclist) {
         return cyclistRepository.save(cyclist);
     }
+
+    @Override
+    public List<Cyclist> findAll() {
+        return cyclistRepository.findAll();
+    }
+
 }
