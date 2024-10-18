@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -31,4 +32,9 @@ public class CompetitionServiceImpl implements CompetitionService {
         }
 
         return competitionRepository.save(competition);    }
+
+    @Override
+    public Optional<Competition> findCompetitionById(Long id) {
+        return competitionRepository.findById(id);
+    }
 }

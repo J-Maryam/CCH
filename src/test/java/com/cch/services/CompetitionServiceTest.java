@@ -12,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -88,6 +89,29 @@ class CompetitionServiceTest {
         verify(competitionRepository, times(1)).save(competition);
     }
 
+    @Test
+    public void testFindCompetitionById() {
+        Competition competition = new Competition("Tour de France", "France", LocalDate.of(2024, 7, 1), LocalDate.of(2024, 7, 23));
 
+        when(competitionRepository.findById(anyLong())).thenReturn(Optional.of(competition));
+
+        Optional<Competition> foundCompetition = competitionService.findCompetitionById(1L);
+
+        assertTrue(foundCompetition.isPresent());
+        assertEquals("Tour de France", foundCompetition.get().getName());
+
+        verify(competitionRepository, times(1)).findById(1L);
+    }
+
+    @Test
+    public void testFindCompetitionById_NotFound() {
+
+        when(competitionRepository.findById(2L)).thenReturn(Optional.empty());
+
+        Optional<Competition> foundCompetition = competitionService.findCompetitionById(2L);
+
+        assertFalse(foundCompetition.isPresent());
+        verify(competitionRepository, times(1)).findById(2L);
+    }
 
 }

@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c2d4f88e-f628-43bd-9c18-21b10cf025b8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cch/services/CompetitionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cch/services/CompetitionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cch/services/Impl/CompetitionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cch/services/Impl/CompetitionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cch/services/CompetitionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cch/services/CompetitionServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +49,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "JUnit.CompetitionServiceTest.testCreateCompetitionEndDateBeforeStartDate.executor": "Run",
+    "JUnit.CompetitionServiceTest.testCreateCompetitionWithFutureDates.executor": "Run",
     "JUnit.CompetitionServiceTest.testCreateCompetitionWithNullValues.executor": "Run",
     "JUnit.CyclistServiceTest.findAllCyclists_Success.executor": "Run",
     "JUnit.CyclistServiceTest.testDeleteById_CyclistDoesNotExist.executor": "Run",
@@ -85,7 +88,7 @@
       <recent name="com.cch.services.Impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CompetitionServiceTest.testCreateCompetitionWithFutureDates">
+  <component name="RunManager" selected="JUnit.CompetitionServiceTest.testFindCompetitionById_NotFound">
     <configuration name="CompetitionServiceTest.testCreateCompetitionEndDateBeforeStartDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
@@ -134,7 +137,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CyclistServiceTest.testDeleteById_CyclistDoesNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CompetitionServiceTest.testFindCompetitionById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -143,14 +146,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services" />
-      <option name="MAIN_CLASS_NAME" value="com.cch.services.CyclistServiceTest" />
-      <option name="METHOD_NAME" value="testDeleteById_CyclistDoesNotExist" />
+      <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
+      <option name="METHOD_NAME" value="testFindCompetitionById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CyclistServiceTest.testDeleteById_CyclistExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CompetitionServiceTest.testFindCompetitionById_NotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -159,8 +162,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services" />
-      <option name="MAIN_CLASS_NAME" value="com.cch.services.CyclistServiceTest" />
-      <option name="METHOD_NAME" value="testDeleteById_CyclistExists" />
+      <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
+      <option name="METHOD_NAME" value="testFindCompetitionById_NotFound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CompetitionServiceTest.testFindCompetitionById_NotFound" />
+        <item itemvalue="JUnit.CompetitionServiceTest.testFindCompetitionById" />
         <item itemvalue="JUnit.CompetitionServiceTest.testCreateCompetitionWithFutureDates" />
         <item itemvalue="JUnit.CompetitionServiceTest.testCreateCompetitionEndDateBeforeStartDate" />
         <item itemvalue="JUnit.CompetitionServiceTest.testCreateCompetitionWithNullValues" />
-        <item itemvalue="JUnit.CyclistServiceTest.testDeleteById_CyclistExists" />
-        <item itemvalue="JUnit.CyclistServiceTest.testDeleteById_CyclistDoesNotExist" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +200,7 @@
       <workItem from="1729075684390" duration="8924000" />
       <workItem from="1729093555726" duration="9357000" />
       <workItem from="1729162458773" duration="7185000" />
-      <workItem from="1729198183796" duration="22830000" />
+      <workItem from="1729198183796" duration="23474000" />
     </task>
     <servers />
   </component>
