@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+
 @Service
 @Transactional
 public class CompetitionServiceImpl implements CompetitionService {
@@ -16,6 +18,17 @@ public class CompetitionServiceImpl implements CompetitionService {
 
     @Override
     public Competition saveCompetition(Competition competition) {
-        return competitionRepository.save(competition);
-    }
+        if (competition.getName() == null || competition.getName().isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be null");
+        }
+
+        if (competition.getEndDate().isBefore(competition.getStartDate())) {
+            throw new IllegalArgumentException("End date cannot be before start date");
+        }
+
+        if (competition.getStartDate().isBefore(LocalDate.now())) {
+            throw new IllegalArgumentException("Start date must be in the future");
+        }
+
+        return competitionRepository.save(competition);    }
 }
