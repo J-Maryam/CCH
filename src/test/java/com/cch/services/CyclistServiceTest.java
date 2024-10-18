@@ -165,4 +165,14 @@ public class CyclistServiceTest {
         cyclistService.deleteById(cyclistId);
         verify(cyclistRepository, times(1)).deleteById(cyclistId);
     }
+
+    @Test
+    void testDeleteById_CyclistExists() {
+        Long cyclistId = 1L;
+        Cyclist cyclist = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2000, 5, 19), null);
+
+        when(cyclistRepository.findById(cyclistId)).thenReturn(Optional.of(cyclist));
+        cyclistService.deleteById(cyclistId);
+        verify(cyclistRepository, times(1)).deleteById(cyclistId);
+    }
 }

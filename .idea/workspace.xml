@@ -84,7 +84,7 @@
       <recent name="com.cch.services.Impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CyclistServiceTest.testDeleteById_CyclistDoesNotExist">
+  <component name="RunManager" selected="JUnit.CyclistServiceTest.testDeleteById_CyclistExists">
     <configuration name="CyclistServiceTest.findAllCyclists_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
@@ -112,6 +112,22 @@
       <option name="PACKAGE_NAME" value="com.cch.services" />
       <option name="MAIN_CLASS_NAME" value="com.cch.services.CyclistServiceTest" />
       <option name="METHOD_NAME" value="testDeleteById_CyclistDoesNotExist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CyclistServiceTest.testDeleteById_CyclistExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cch.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cch.services" />
+      <option name="MAIN_CLASS_NAME" value="com.cch.services.CyclistServiceTest" />
+      <option name="METHOD_NAME" value="testDeleteById_CyclistExists" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,29 +165,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CyclistServiceTest.testSaveCyclist_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CCH" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cch.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.cch.services" />
-      <option name="MAIN_CLASS_NAME" value="com.cch.services.CyclistServiceTest" />
-      <option name="METHOD_NAME" value="testSaveCyclist_Success" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CyclistServiceTest.testDeleteById_CyclistExists" />
         <item itemvalue="JUnit.CyclistServiceTest.testDeleteById_CyclistDoesNotExist" />
         <item itemvalue="JUnit.CyclistServiceTest.testFindById_CyclistDoesNotExist" />
         <item itemvalue="JUnit.CyclistServiceTest.testFindById_CycleExists" />
         <item itemvalue="JUnit.CyclistServiceTest.findAllCyclists_Success" />
-        <item itemvalue="JUnit.CyclistServiceTest.testSaveCyclist_Success" />
       </list>
     </recent_temporary>
   </component>
