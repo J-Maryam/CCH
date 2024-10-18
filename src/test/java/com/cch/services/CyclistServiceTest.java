@@ -158,4 +158,11 @@ public class CyclistServiceTest {
         Optional<Cyclist> foundCyclist = cyclistService.findById(cyclistId);
         assertFalse(foundCyclist.isPresent(),  "Cyclist should not be found");
     }
+
+    @Test
+    public void testDeleteById_CyclistDoesNotExist() {
+        Long cyclistId = 2L;
+        cyclistService.deleteById(cyclistId);
+        verify(cyclistRepository, times(1)).deleteById(cyclistId);
+    }
 }

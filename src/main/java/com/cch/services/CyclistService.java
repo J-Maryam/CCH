@@ -9,4 +9,5 @@ public interface CyclistService {
     Cyclist save(Cyclist cyclist);
     List<Cyclist> findAll();
     Optional<Cyclist> findById(Long id);
+    void deleteById(Long id);
 }

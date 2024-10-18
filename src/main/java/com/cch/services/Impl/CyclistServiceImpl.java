@@ -39,4 +39,9 @@ public class CyclistServiceImpl implements CyclistService {
         return cyclistRepository.findById(id);
     }
 
+    @Override
+    public void deleteById(Long id) {
+        cyclistRepository.deleteById(id);
+    }
+
 }
