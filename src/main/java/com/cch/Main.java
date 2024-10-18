@@ -10,21 +10,43 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-
-        Team team = new Team("Team A");
         TeamService teamService = context.getBean(TeamService.class);
-        teamService.save(team);
-
         CyclistService cyclistService = context.getBean(CyclistService.class);
-        Cyclist cyclist = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2000, 5, 19), team);
-        cyclistService.save(cyclist);
 
-        System.out.println("Cyclist saved successfully!");
+//        Team team = new Team("Team B");
+//        teamService.save(team);
+//
+//        Cyclist cyclist = new Cyclist("Sara", "Perles", "USA", LocalDate.of(2000, 5, 19), team);
+//        Cyclist savedCyclist = cyclistService.save(cyclist);
+//
+//        if (savedCyclist != null && savedCyclist.getId() != null) {
+//            System.out.println("Cyclist saved successfully with ID: " + savedCyclist.getId());
+//        } else {
+//            System.out.println("Failed to save cyclist.");
+//        }
+
+        List<Cyclist> cyclists = cyclistService.findAll();
+
+        if (cyclists.isEmpty()) {
+            System.out.println("\nNo Cyclists found");
+        }else {
+            System.out.println("\nList of Cyclists: ");
+            for (Cyclist cyclist : cyclists) {
+                System.out.println("Cyclist Id: " + cyclist.getFName());
+                System.out.println("First Name: " + cyclist.getFName());
+                System.out.println("Last Name: " + cyclist.getLName());
+                System.out.println("Nationality: " + cyclist.getNationality());
+                System.out.println("Birth Date: " + cyclist.getBirthDate());
+                System.out.println("Team: " + cyclist.getTeam().getTeam());
+                System.out.println("-----------------------------");
+            }
+        }
 
 
     }
