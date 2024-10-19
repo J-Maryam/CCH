@@ -11,7 +11,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -52,62 +51,36 @@ public class CyclistServiceTest {
         verify(cyclistRepository, times(1)).save(cyclist);
     }
 
-//    @Test
-//    public void testSaveCyclist_InvalidData_ShouldThrowException() {
-//        Team team = new Team("Team A");
-//
-//        Cyclist cyclist = new Cyclist("Anna","","Canada",LocalDate.of(1995, 3, 15),team);
-//
-//        ConstraintViolationException exception = assertThrows(ConstraintViolationException.class, () -> {
-//            cyclistService.save(cyclist);
-//        });
-//
-//        assertNotNull(exception.getMessage());
-//        verify(cyclistRepository, never()).save(any(Cyclist.class));
-//    }
+    @Test
+    public void testSaveCyclist_InvalidFirstName_ShouldThrowException() {
+        Cyclist cyclist = new Cyclist("", "Russo", "USA", LocalDate.of(2000, 5, 19), new Team("Team A"));
 
-//    @Test
-//    public void testSaveCyclist_WithInvalidBirthDate_ShouldThrowValidationException() {
-//
-//        Team team = new Team("Team A");
-//        Cyclist cyclist = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2030, 5, 19), team);
-//
-//        assertThrows(ConstraintViolationException.class, () -> {
-//            cyclistService.save(cyclist);
-//        });
-//    }
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> cyclistService.save(cyclist));
 
-//    @Test
-//    public void testSaveCyclist_InvalidFirstName() {
-//        Team team = new Team("Team A");
-//
-//        Cyclist cyclist = new Cyclist("", "Russo", "USA", LocalDate.of(2000, 5, 19), team);
-//
-//        Cyclist savedCyclist = cyclistService.save(cyclist);
-//
-//        assertNull(savedCyclist);
-//        verify(cyclistRepository, never()).save(any(Cyclist.class));
-//    }
+        assertEquals("First name cannot be empty", exception.getMessage());
+        verify(cyclistRepository, never()).save(any(Cyclist.class));
+    }
 
-//    @Test
-//    public void testSaveCyclist_InvalidBirthDate() {
-//        Team team = new Team("Team A");
-//
-//        Cyclist cyclist = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2030, 5, 19), team);
-//
-//        assertThrows(ConstraintViolationException.class, () -> cyclistService.save(cyclist));
-//
-//        verify(cyclistRepository, never()).save(any(Cyclist.class));
-//    }
 
-//    @Test
-//    public void testSaveCyclist_NoTeam() {
-//        Cyclist cyclist = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2000, 5, 19), null);
-//
-//        assertThrows(ConstraintViolationException.class, () -> cyclistService.save(cyclist));
-//
-//        verify(cyclistRepository, never()).save(any(Cyclist.class));
-//    }
+    @Test
+    public void testSaveCyclist_InvalidBirthDate_ShouldThrowException() {
+        Cyclist cyclist = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2025, 1, 1), new Team("Team A"));
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> cyclistService.save(cyclist));
+
+        assertEquals("Birth date must be in the past", exception.getMessage());
+        verify(cyclistRepository, never()).save(any(Cyclist.class));
+    }
+
+    @Test
+    public void testSaveCyclist_NoTeam_ShouldThrowException() {
+        Cyclist cyclist = new Cyclist("Jean", "Russo", "USA", LocalDate.of(2000, 5, 19), null);
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> cyclistService.save(cyclist));
+
+        assertEquals("Cyclist must belong to a team", exception.getMessage());
+        verify(cyclistRepository, never()).save(any(Cyclist.class));
+    }
 
     @Test
     public void findAllCyclists_Success() {

@@ -3,15 +3,11 @@ package com.cch.services.Impl;
 import com.cch.entities.Cyclist;
 import com.cch.repositories.CyclistRepository;
 import com.cch.services.CyclistService;
-import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.validation.annotation.Validated;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
-
 
 @Transactional
 public class CyclistServiceImpl implements CyclistService {
@@ -25,6 +21,19 @@ public class CyclistServiceImpl implements CyclistService {
 
     @Override
     public Cyclist save(Cyclist cyclist) {
+
+        if (cyclist.getFName() == null || cyclist.getFName().isEmpty()) {
+            throw new IllegalArgumentException("First name cannot be empty");
+        }
+        if (cyclist.getLName() == null || cyclist.getLName().isEmpty()) {
+            throw new IllegalArgumentException("Last name cannot be empty");
+        }
+        if (cyclist.getBirthDate() == null || cyclist.getBirthDate().isAfter(LocalDate.now())) {
+            throw new IllegalArgumentException("Birth date must be in the past");
+        }
+        if (cyclist.getTeam() == null) {
+            throw new IllegalArgumentException("Cyclist must belong to a team");
+        }
         return cyclistRepository.save(cyclist);
     }
 

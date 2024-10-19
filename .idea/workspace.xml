@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c2d4f88e-f628-43bd-9c18-21b10cf025b8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cch/services/CompetitionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cch/services/CompetitionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cch/services/Impl/CompetitionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cch/services/Impl/CompetitionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cch/services/CompetitionServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cch/services/CompetitionServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cch/services/Impl/CyclistServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cch/services/Impl/CyclistServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cch/services/CyclistServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cch/services/CyclistServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +51,7 @@
     "JUnit.CompetitionServiceTest.testCreateCompetitionValidData.executor": "Run",
     "JUnit.CompetitionServiceTest.testCreateCompetitionWithFutureDates.executor": "Run",
     "JUnit.CompetitionServiceTest.testCreateCompetitionWithNullValues.executor": "Run",
+    "JUnit.CompetitionServiceTest.testDeleteCompetitionWithForeignKeyConstraint.executor": "Run",
     "JUnit.CompetitionServiceTest.testDeleteExistingCompetition.executor": "Run",
     "JUnit.CompetitionServiceTest.testDeleteNonExistentCompetition.executor": "Run",
     "JUnit.CompetitionServiceTest.testFindCompetitionById.executor": "Run",
@@ -67,8 +67,10 @@
     "JUnit.CyclistServiceTest.testSaveCyclist.executor": "Run",
     "JUnit.CyclistServiceTest.testSaveCyclist_EmptyRepository.executor": "Run",
     "JUnit.CyclistServiceTest.testSaveCyclist_InvalidBirthDate.executor": "Run",
+    "JUnit.CyclistServiceTest.testSaveCyclist_InvalidBirthDate_ShouldThrowException.executor": "Run",
     "JUnit.CyclistServiceTest.testSaveCyclist_InvalidData_ShouldThrowException.executor": "Run",
     "JUnit.CyclistServiceTest.testSaveCyclist_InvalidFirstName.executor": "Run",
+    "JUnit.CyclistServiceTest.testSaveCyclist_InvalidFirstName_ShouldThrowException.executor": "Run",
     "JUnit.CyclistServiceTest.testSaveCyclist_NullCyclist_ShouldThrowException.executor": "Run",
     "JUnit.CyclistServiceTest.testSaveCyclist_Success.executor": "Run",
     "JUnit.CyclistServiceTest.testSaveCyclist_WithInvalidBirthDate_ShouldThrowValidationException.executor": "Run",
@@ -96,7 +98,7 @@
       <recent name="com.cch.services.Impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CompetitionServiceTest.testDeleteCompetitionWithForeignKeyConstraint">
+  <component name="RunManager" selected="JUnit.CyclistServiceTest.testSaveCyclist_NoTeam_ShouldThrowException">
     <configuration name="CompetitionServiceTest.testDeleteCompetitionWithForeignKeyConstraint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
@@ -113,7 +115,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CompetitionServiceTest.testDeleteExistingCompetition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CyclistServiceTest.testSaveCyclist_InvalidBirthDate_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -122,14 +124,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services" />
-      <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
-      <option name="METHOD_NAME" value="testDeleteExistingCompetition" />
+      <option name="MAIN_CLASS_NAME" value="com.cch.services.CyclistServiceTest" />
+      <option name="METHOD_NAME" value="testSaveCyclist_InvalidBirthDate_ShouldThrowException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CompetitionServiceTest.testDeleteNonExistentCompetition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CyclistServiceTest.testSaveCyclist_InvalidData_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -138,14 +140,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services" />
-      <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
-      <option name="METHOD_NAME" value="testDeleteNonExistentCompetition" />
+      <option name="MAIN_CLASS_NAME" value="com.cch.services.CyclistServiceTest" />
+      <option name="METHOD_NAME" value="testSaveCyclist_InvalidData_ShouldThrowException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CompetitionServiceTest.testUpdateCompetitionWithNonExistentId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CyclistServiceTest.testSaveCyclist_InvalidFirstName_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -154,14 +156,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services" />
-      <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
-      <option name="METHOD_NAME" value="testUpdateCompetitionWithNonExistentId" />
+      <option name="MAIN_CLASS_NAME" value="com.cch.services.CyclistServiceTest" />
+      <option name="METHOD_NAME" value="testSaveCyclist_InvalidFirstName_ShouldThrowException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CompetitionServiceTest.testUpdateCompetitionWithNullName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CyclistServiceTest.testSaveCyclist_NoTeam_ShouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -170,8 +172,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services" />
-      <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
-      <option name="METHOD_NAME" value="testUpdateCompetitionWithNullName" />
+      <option name="MAIN_CLASS_NAME" value="com.cch.services.CyclistServiceTest" />
+      <option name="METHOD_NAME" value="testSaveCyclist_NoTeam_ShouldThrowException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,11 +181,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CyclistServiceTest.testSaveCyclist_NoTeam_ShouldThrowException" />
+        <item itemvalue="JUnit.CyclistServiceTest.testSaveCyclist_InvalidBirthDate_ShouldThrowException" />
+        <item itemvalue="JUnit.CyclistServiceTest.testSaveCyclist_InvalidFirstName_ShouldThrowException" />
+        <item itemvalue="JUnit.CyclistServiceTest.testSaveCyclist_InvalidData_ShouldThrowException" />
         <item itemvalue="JUnit.CompetitionServiceTest.testDeleteCompetitionWithForeignKeyConstraint" />
-        <item itemvalue="JUnit.CompetitionServiceTest.testDeleteNonExistentCompetition" />
-        <item itemvalue="JUnit.CompetitionServiceTest.testDeleteExistingCompetition" />
-        <item itemvalue="JUnit.CompetitionServiceTest.testUpdateCompetitionWithNullName" />
-        <item itemvalue="JUnit.CompetitionServiceTest.testUpdateCompetitionWithNonExistentId" />
       </list>
     </recent_temporary>
   </component>
@@ -208,7 +210,7 @@
       <workItem from="1729075684390" duration="8924000" />
       <workItem from="1729093555726" duration="9357000" />
       <workItem from="1729162458773" duration="7185000" />
-      <workItem from="1729198183796" duration="27600000" />
+      <workItem from="1729198183796" duration="30807000" />
     </task>
     <servers />
   </component>
