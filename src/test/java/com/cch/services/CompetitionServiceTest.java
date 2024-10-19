@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 
 import java.time.LocalDate;
 import java.util.Optional;
@@ -162,4 +164,44 @@ class CompetitionServiceTest {
         assertEquals("Name cannot be null", exception.getMessage());
         verify(competitionRepository, never()).save(competition);
     }
+
+    @Test
+    public void testDeleteExistingCompetition() {
+        Long competitionId = 1L;
+
+        doNothing().when(competitionRepository).deleteById(competitionId);
+        competitionService.deleteCompetition(competitionId);
+
+        verify(competitionRepository, times(1)).deleteById(competitionId);
+    }
+
+    @Test
+    public void testDeleteNonExistentCompetition() {
+        Long nonExistentCompetitionId = 999L;
+
+        doThrow(new EmptyResultDataAccessException(1)).when(competitionRepository).deleteById(nonExistentCompetitionId);
+
+        Exception exception = assertThrows(EmptyResultDataAccessException.class, () -> {
+            competitionService.deleteCompetition(nonExistentCompetitionId);
+        });
+
+        assertNotNull(exception);
+        verify(competitionRepository, times(1)).deleteById(nonExistentCompetitionId);
+    }
+
+    @Test
+    public void testDeleteCompetitionWithForeignKeyConstraint() {
+        Long competitionId = 3L;
+
+        doThrow(new DataIntegrityViolationException("Constraint violation")).when(competitionRepository).deleteById(competitionId);
+
+        Exception exception = assertThrows(DataIntegrityViolationException.class, () -> {
+            competitionService.deleteCompetition(competitionId);
+        });
+
+        assertEquals("Constraint violation", exception.getMessage());
+        verify(competitionRepository, times(1)).deleteById(competitionId);
+    }
+
+
 }

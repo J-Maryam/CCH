@@ -9,4 +9,5 @@ public interface CompetitionService {
     Competition saveCompetition(Competition competition);
     Optional<Competition> findCompetitionById(Long id);
     Competition updateCompetition(Competition competition);
+    void deleteCompetition(Long id);
 }

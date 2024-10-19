@@ -52,9 +52,13 @@
     "JUnit.CompetitionServiceTest.testCreateCompetitionValidData.executor": "Run",
     "JUnit.CompetitionServiceTest.testCreateCompetitionWithFutureDates.executor": "Run",
     "JUnit.CompetitionServiceTest.testCreateCompetitionWithNullValues.executor": "Run",
+    "JUnit.CompetitionServiceTest.testDeleteExistingCompetition.executor": "Run",
+    "JUnit.CompetitionServiceTest.testDeleteNonExistentCompetition.executor": "Run",
     "JUnit.CompetitionServiceTest.testFindCompetitionById.executor": "Run",
     "JUnit.CompetitionServiceTest.testFindCompetitionById_NotFound.executor": "Run",
     "JUnit.CompetitionServiceTest.testUpdateCompetitionValidData.executor": "Run",
+    "JUnit.CompetitionServiceTest.testUpdateCompetitionWithNonExistentId.executor": "Run",
+    "JUnit.CompetitionServiceTest.testUpdateCompetitionWithNullName.executor": "Run",
     "JUnit.CyclistServiceTest.findAllCyclists_Success.executor": "Run",
     "JUnit.CyclistServiceTest.testDeleteById_CyclistDoesNotExist.executor": "Run",
     "JUnit.CyclistServiceTest.testDeleteById_CyclistExists.executor": "Run",
@@ -92,8 +96,8 @@
       <recent name="com.cch.services.Impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CompetitionServiceTest.testUpdateCompetitionWithNullName">
-    <configuration name="CompetitionServiceTest.testCreateCompetitionValidData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CompetitionServiceTest.testDeleteCompetitionWithForeignKeyConstraint">
+    <configuration name="CompetitionServiceTest.testDeleteCompetitionWithForeignKeyConstraint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -103,13 +107,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services" />
       <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
-      <option name="METHOD_NAME" value="testCreateCompetitionValidData" />
+      <option name="METHOD_NAME" value="testDeleteCompetitionWithForeignKeyConstraint" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CompetitionServiceTest.testFindCompetitionById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CompetitionServiceTest.testDeleteExistingCompetition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -119,13 +123,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services" />
       <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
-      <option name="METHOD_NAME" value="testFindCompetitionById" />
+      <option name="METHOD_NAME" value="testDeleteExistingCompetition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CompetitionServiceTest.testUpdateCompetitionValidData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CompetitionServiceTest.testDeleteNonExistentCompetition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -135,7 +139,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services" />
       <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
-      <option name="METHOD_NAME" value="testUpdateCompetitionValidData" />
+      <option name="METHOD_NAME" value="testDeleteNonExistentCompetition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -175,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CompetitionServiceTest.testDeleteCompetitionWithForeignKeyConstraint" />
+        <item itemvalue="JUnit.CompetitionServiceTest.testDeleteNonExistentCompetition" />
+        <item itemvalue="JUnit.CompetitionServiceTest.testDeleteExistingCompetition" />
         <item itemvalue="JUnit.CompetitionServiceTest.testUpdateCompetitionWithNullName" />
         <item itemvalue="JUnit.CompetitionServiceTest.testUpdateCompetitionWithNonExistentId" />
-        <item itemvalue="JUnit.CompetitionServiceTest.testFindCompetitionById" />
-        <item itemvalue="JUnit.CompetitionServiceTest.testCreateCompetitionValidData" />
-        <item itemvalue="JUnit.CompetitionServiceTest.testUpdateCompetitionValidData" />
       </list>
     </recent_temporary>
   </component>
@@ -204,7 +208,7 @@
       <workItem from="1729075684390" duration="8924000" />
       <workItem from="1729093555726" duration="9357000" />
       <workItem from="1729162458773" duration="7185000" />
-      <workItem from="1729198183796" duration="26369000" />
+      <workItem from="1729198183796" duration="27600000" />
     </task>
     <servers />
   </component>

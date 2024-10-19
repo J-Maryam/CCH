@@ -60,4 +60,9 @@ public class CompetitionServiceImpl implements CompetitionService {
         return competitionRepository.save(competition);
     }
 
+    @Override
+    public void deleteCompetition(Long id) {
+        competitionRepository.deleteById(id);
+    }
+
 }
