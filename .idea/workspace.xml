@@ -49,8 +49,12 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "JUnit.CompetitionServiceTest.testCreateCompetitionEndDateBeforeStartDate.executor": "Run",
+    "JUnit.CompetitionServiceTest.testCreateCompetitionValidData.executor": "Run",
     "JUnit.CompetitionServiceTest.testCreateCompetitionWithFutureDates.executor": "Run",
     "JUnit.CompetitionServiceTest.testCreateCompetitionWithNullValues.executor": "Run",
+    "JUnit.CompetitionServiceTest.testFindCompetitionById.executor": "Run",
+    "JUnit.CompetitionServiceTest.testFindCompetitionById_NotFound.executor": "Run",
+    "JUnit.CompetitionServiceTest.testUpdateCompetitionValidData.executor": "Run",
     "JUnit.CyclistServiceTest.findAllCyclists_Success.executor": "Run",
     "JUnit.CyclistServiceTest.testDeleteById_CyclistDoesNotExist.executor": "Run",
     "JUnit.CyclistServiceTest.testDeleteById_CyclistExists.executor": "Run",
@@ -88,8 +92,8 @@
       <recent name="com.cch.services.Impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CompetitionServiceTest.testFindCompetitionById_NotFound">
-    <configuration name="CompetitionServiceTest.testCreateCompetitionEndDateBeforeStartDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CompetitionServiceTest.testUpdateCompetitionWithNullName">
+    <configuration name="CompetitionServiceTest.testCreateCompetitionValidData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -99,39 +103,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services" />
       <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
-      <option name="METHOD_NAME" value="testCreateCompetitionEndDateBeforeStartDate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CompetitionServiceTest.testCreateCompetitionWithFutureDates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CCH" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cch.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.cch.services" />
-      <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
-      <option name="METHOD_NAME" value="testCreateCompetitionWithFutureDates" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CompetitionServiceTest.testCreateCompetitionWithNullValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CCH" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cch.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.cch.services" />
-      <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
-      <option name="METHOD_NAME" value="testCreateCompetitionWithNullValues" />
+      <option name="METHOD_NAME" value="testCreateCompetitionValidData" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -153,7 +125,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CompetitionServiceTest.testFindCompetitionById_NotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CompetitionServiceTest.testUpdateCompetitionValidData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -163,7 +135,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services" />
       <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
-      <option name="METHOD_NAME" value="testFindCompetitionById_NotFound" />
+      <option name="METHOD_NAME" value="testUpdateCompetitionValidData" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompetitionServiceTest.testUpdateCompetitionWithNonExistentId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cch.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cch.services" />
+      <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
+      <option name="METHOD_NAME" value="testUpdateCompetitionWithNonExistentId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompetitionServiceTest.testUpdateCompetitionWithNullName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cch.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cch.services" />
+      <option name="MAIN_CLASS_NAME" value="com.cch.services.CompetitionServiceTest" />
+      <option name="METHOD_NAME" value="testUpdateCompetitionWithNullName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -171,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CompetitionServiceTest.testFindCompetitionById_NotFound" />
+        <item itemvalue="JUnit.CompetitionServiceTest.testUpdateCompetitionWithNullName" />
+        <item itemvalue="JUnit.CompetitionServiceTest.testUpdateCompetitionWithNonExistentId" />
         <item itemvalue="JUnit.CompetitionServiceTest.testFindCompetitionById" />
-        <item itemvalue="JUnit.CompetitionServiceTest.testCreateCompetitionWithFutureDates" />
-        <item itemvalue="JUnit.CompetitionServiceTest.testCreateCompetitionEndDateBeforeStartDate" />
-        <item itemvalue="JUnit.CompetitionServiceTest.testCreateCompetitionWithNullValues" />
+        <item itemvalue="JUnit.CompetitionServiceTest.testCreateCompetitionValidData" />
+        <item itemvalue="JUnit.CompetitionServiceTest.testUpdateCompetitionValidData" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +204,7 @@
       <workItem from="1729075684390" duration="8924000" />
       <workItem from="1729093555726" duration="9357000" />
       <workItem from="1729162458773" duration="7185000" />
-      <workItem from="1729198183796" duration="23474000" />
+      <workItem from="1729198183796" duration="26369000" />
     </task>
     <servers />
   </component>

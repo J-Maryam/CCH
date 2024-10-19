@@ -33,7 +33,7 @@ class CompetitionServiceTest {
 
     @Test
     public void testCreateCompetitionValidData() {
-        Competition competition = new Competition("Tour de France", "France", LocalDate.of(2024, 7, 1), LocalDate.of(2024, 7, 23));
+        Competition competition = new Competition("Tour de France", "France", LocalDate.of(2024, 12, 1), LocalDate.of(2025, 7, 23));
 
         when(competitionRepository.save(any(Competition.class))).thenReturn(competition);
 
@@ -42,8 +42,8 @@ class CompetitionServiceTest {
         assertNotNull(savedCompetition);
         assertEquals("Tour de France", savedCompetition.getName());
         assertEquals("France", savedCompetition.getLocation());
-        assertEquals(LocalDate.of(2024, 7, 1), savedCompetition.getStartDate());
-        assertEquals(LocalDate.of(2024, 7, 23), savedCompetition.getEndDate());
+        assertEquals(LocalDate.of(2024, 12, 1), savedCompetition.getStartDate());
+        assertEquals(LocalDate.of(2025, 7, 23), savedCompetition.getEndDate());
 
         verify(competitionRepository, times(1)).save(competition);
     }
@@ -114,4 +114,52 @@ class CompetitionServiceTest {
         verify(competitionRepository, times(1)).findById(2L);
     }
 
+    @Test
+    public void testUpdateCompetitionValidData() {
+        Competition existingCompetition = new Competition("Tour de France", "France", LocalDate.of(2030, 7, 1), LocalDate.of(2030, 7, 23));
+        existingCompetition.setId(1L);
+
+        when(competitionRepository.existsById(1L)).thenReturn(true);
+        when(competitionRepository.save(any(Competition.class))).thenReturn(existingCompetition);
+
+        Competition updatedCompetition = competitionService.updateCompetition(existingCompetition);
+
+        assertNotNull(updatedCompetition);
+        assertEquals("Tour de France", updatedCompetition.getName());
+        assertEquals("France", updatedCompetition.getLocation());
+        assertEquals(LocalDate.of(2030, 7, 1), updatedCompetition.getStartDate());
+        assertEquals(LocalDate.of(2030, 7, 23), updatedCompetition.getEndDate());
+
+        verify(competitionRepository, times(1)).save(existingCompetition);
+    }
+
+    @Test
+    public void testUpdateCompetitionWithNonExistentId() {
+        Competition competition = new Competition("Giro d'Italia", "Italy", LocalDate.of(2024, 5, 25), LocalDate.of(2024, 5, 30));
+        competition.setId(1L);
+
+        when(competitionRepository.existsById(1L)).thenReturn(false);
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            competitionService.updateCompetition(competition);
+        });
+
+        assertEquals("Competition does not exist", exception.getMessage());
+        verify(competitionRepository, never()).save(competition);
+    }
+
+    @Test
+    public void testUpdateCompetitionWithNullName() {
+        Competition competition = new Competition(null, "Italy", LocalDate.of(2024, 5, 25), LocalDate.of(2024, 5, 30));
+        competition.setId(1L);
+
+        when(competitionRepository.existsById(1L)).thenReturn(true);
+
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            competitionService.updateCompetition(competition);
+        });
+
+        assertEquals("Name cannot be null", exception.getMessage());
+        verify(competitionRepository, never()).save(competition);
+    }
 }

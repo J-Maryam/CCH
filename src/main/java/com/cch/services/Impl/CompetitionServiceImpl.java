@@ -31,10 +31,33 @@ public class CompetitionServiceImpl implements CompetitionService {
             throw new IllegalArgumentException("Start date must be in the future");
         }
 
-        return competitionRepository.save(competition);    }
+        return competitionRepository.save(competition);
+    }
 
     @Override
     public Optional<Competition> findCompetitionById(Long id) {
         return competitionRepository.findById(id);
     }
+
+    @Override
+    public Competition updateCompetition(Competition competition) {
+        if (competition.getId() == null || !competitionRepository.existsById(competition.getId())) {
+            throw new IllegalArgumentException("Competition does not exist");
+        }
+
+        if (competition.getName() == null || competition.getName().isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be null");
+        }
+
+        if (competition.getEndDate().isBefore(competition.getStartDate())) {
+            throw new IllegalArgumentException("End date cannot be before start date");
+        }
+
+        if (competition.getStartDate().isBefore(LocalDate.now())) {
+            throw new IllegalArgumentException("Start date must be in the future");
+        }
+
+        return competitionRepository.save(competition);
+    }
+
 }
