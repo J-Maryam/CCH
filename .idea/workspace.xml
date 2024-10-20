@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2d4f88e-f628-43bd-9c18-21b10cf025b8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cch/services/Impl/StageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cch/services/Impl/StageServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cch/services/StageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cch/services/StageService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/cch/services/Impl/StageServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cch/services/Impl/StageServiceImplTest.java" afterDir="false" />
@@ -75,7 +76,12 @@
     "JUnit.CyclistServiceTest.testSaveCyclist_NullCyclist_ShouldThrowException.executor": "Run",
     "JUnit.CyclistServiceTest.testSaveCyclist_Success.executor": "Run",
     "JUnit.CyclistServiceTest.testSaveCyclist_WithInvalidBirthDate_ShouldThrowValidationException.executor": "Run",
+    "JUnit.StageServiceImplTest.testGetAllStagesEmpty.executor": "Run",
     "JUnit.StageServiceImplTest.testGetAllStagesWithStages.executor": "Run",
+    "JUnit.StageServiceImplTest.testGetStageByIdNotFound.executor": "Run",
+    "JUnit.StageServiceImplTest.testGetStageByIdSuccess.executor": "Run",
+    "JUnit.StageServiceImplTest.testGetStageByIdWithNegativeId.executor": "Run",
+    "JUnit.StageServiceImplTest.testGetStageByIdWithNullId.executor": "Run",
     "JUnit.StageServiceImplTest.testInvalidStageNumber.executor": "Run",
     "JUnit.StageServiceImplTest.testNoCompetition.executor": "Run",
     "JUnit.StageServiceImplTest.testNoStartTime.executor": "Run",
@@ -105,7 +111,7 @@
       <recent name="com.cch.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StageServiceImplTest.testGetAllStagesEmpty">
+  <component name="RunManager" selected="JUnit.StageServiceImplTest.testGetStageByIdWithNegativeId">
     <configuration name="StageServiceImplTest.testGetAllStagesEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
@@ -122,7 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StageServiceImplTest.testGetAllStagesWithStages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StageServiceImplTest.testGetStageByIdNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -132,13 +138,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services.Impl" />
       <option name="MAIN_CLASS_NAME" value="com.cch.services.Impl.StageServiceImplTest" />
-      <option name="METHOD_NAME" value="testGetAllStagesWithStages" />
+      <option name="METHOD_NAME" value="testGetStageByIdNotFound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StageServiceImplTest.testNoCompetition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StageServiceImplTest.testGetStageByIdSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -148,13 +154,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services.Impl" />
       <option name="MAIN_CLASS_NAME" value="com.cch.services.Impl.StageServiceImplTest" />
-      <option name="METHOD_NAME" value="testNoCompetition" />
+      <option name="METHOD_NAME" value="testGetStageByIdSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StageServiceImplTest.testNoStartTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StageServiceImplTest.testGetStageByIdWithNegativeId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -164,13 +170,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services.Impl" />
       <option name="MAIN_CLASS_NAME" value="com.cch.services.Impl.StageServiceImplTest" />
-      <option name="METHOD_NAME" value="testNoStartTime" />
+      <option name="METHOD_NAME" value="testGetStageByIdWithNegativeId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StageServiceImplTest.testSameStartAndEndLocation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StageServiceImplTest.testGetStageByIdWithNullId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -180,7 +186,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services.Impl" />
       <option name="MAIN_CLASS_NAME" value="com.cch.services.Impl.StageServiceImplTest" />
-      <option name="METHOD_NAME" value="testSameStartAndEndLocation" />
+      <option name="METHOD_NAME" value="testGetStageByIdWithNullId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -188,11 +194,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StageServiceImplTest.testGetStageByIdWithNegativeId" />
+        <item itemvalue="JUnit.StageServiceImplTest.testGetStageByIdWithNullId" />
+        <item itemvalue="JUnit.StageServiceImplTest.testGetStageByIdNotFound" />
+        <item itemvalue="JUnit.StageServiceImplTest.testGetStageByIdSuccess" />
         <item itemvalue="JUnit.StageServiceImplTest.testGetAllStagesEmpty" />
-        <item itemvalue="JUnit.StageServiceImplTest.testGetAllStagesWithStages" />
-        <item itemvalue="JUnit.StageServiceImplTest.testNoCompetition" />
-        <item itemvalue="JUnit.StageServiceImplTest.testNoStartTime" />
-        <item itemvalue="JUnit.StageServiceImplTest.testSameStartAndEndLocation" />
       </list>
     </recent_temporary>
   </component>
@@ -217,7 +223,7 @@
       <workItem from="1729075684390" duration="8924000" />
       <workItem from="1729093555726" duration="9357000" />
       <workItem from="1729162458773" duration="7185000" />
-      <workItem from="1729198183796" duration="36304000" />
+      <workItem from="1729198183796" duration="38098000" />
     </task>
     <servers />
   </component>

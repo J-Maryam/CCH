@@ -7,4 +7,5 @@ import java.util.List;
 public interface StageService {
     Stage saveStage(Stage stage);
     List<Stage> getStages();
+    Stage getStageById(Long id);
 }

@@ -41,4 +41,17 @@ public class StageServiceImpl implements StageService {
     public List<Stage> getStages() {
         return stageRepository.findAll();
     }
+
+    @Override
+    public Stage getStageById(Long id) {
+        if (id == null) {
+            throw new IllegalArgumentException("ID ne peut pas être null");
+        }
+        if (id <= 0) {
+            throw new IllegalArgumentException("ID ne peut pas être négatif");
+        }
+        return stageRepository.findById(id).orElseThrow(() ->
+                new IllegalArgumentException("Stage non trouvé avec ID " + id));
+    }
+
 }

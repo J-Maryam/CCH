@@ -5,6 +5,7 @@ import com.cch.entities.Stage;
 import com.cch.entities.enums.StageType;
 import com.cch.repositories.StageRepository;
 import com.cch.services.StageService;
+import jakarta.persistence.EntityNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -124,6 +125,53 @@ class StageServiceImplTest {
         assertNotNull(stages);
         assertTrue(stages.isEmpty());
         verify(stageRepository, times(1)).findAll();
+    }
+
+    @Test
+    void testGetStageByIdSuccess() {
+        Competition competition = new Competition("Tour de France", "France", LocalDate.of(2024, 7, 1), LocalDate.of(2024, 7, 23));
+        Stage stage = new Stage(1, "Paris", "Lyon", LocalDate.of(2024, 7, 10), LocalTime.of(9, 0), StageType.FLAT, competition);
+
+        when(stageRepository.getReferenceById(1L)).thenReturn(stage);
+
+        Stage retrievedStage = stageService.getStageById(1L);
+
+        assertNotNull(retrievedStage);
+        assertEquals(1, retrievedStage.getNumber());
+        assertEquals("Paris", retrievedStage.getStartLocation());
+        verify(stageRepository, times(1)).getReferenceById(1L);
+    }
+
+    @Test
+    void testGetStageByIdNotFound() {
+        when(stageRepository.getReferenceById(999L)).thenThrow(new EntityNotFoundException("Stage non trouvé avec ID 999"));
+
+        EntityNotFoundException exception = assertThrows(EntityNotFoundException.class, () -> {
+            stageService.getStageById(999L);
+        });
+
+        assertEquals("Stage non trouvé avec ID 999", exception.getMessage());
+        verify(stageRepository, times(1)).getReferenceById(999L);
+    }
+
+    @Test
+    void testGetStageByIdWithNullId() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            stageService.getStageById(null);
+        });
+
+        assertEquals("ID ne peut pas être null", exception.getMessage());
+        verify(stageRepository, times(0)).getReferenceById(any());
+    }
+
+    @Test
+    void testGetStageByIdWithNegativeId() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            stageService.getStageById(-2L);
+        });
+
+        assertEquals("ID ne peut pas être négatif", exception.getMessage());
+        verify(stageRepository, times(0)).getReferenceById(any());
     }
 
 
