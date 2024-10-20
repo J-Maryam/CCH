@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Transactional
 @Service
@@ -34,5 +35,10 @@ public class StageServiceImpl implements StageService {
             throw new IllegalArgumentException("La compétition ne doit pas être nulle.");
         }
         return stageRepository.save(stage);
+    }
+
+    @Override
+    public List<Stage> getStages() {
+        return stageRepository.findAll();
     }
 }
