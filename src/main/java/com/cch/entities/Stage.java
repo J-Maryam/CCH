@@ -44,4 +44,14 @@ public class Stage {
 
     @OneToMany(mappedBy = "stage", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<StageResult> results = new HashSet<>();
+
+    public Stage (Integer number, String startLocation, String endLocation, LocalDate date, LocalTime startTime, StageType stageType, Competition competition) {
+        this.number = number;
+        this.startLocation = startLocation;
+        this.endLocation = endLocation;
+        this.date = date;
+        this.startTime = startTime;
+        this.stageType = stageType;
+        this.competition = competition;
+    }
 }

@@ -4,9 +4,12 @@ package com.cch;
 import com.cch.config.AppConfig;
 import com.cch.entities.Competition;
 import com.cch.entities.Cyclist;
+import com.cch.entities.Stage;
 import com.cch.entities.Team;
+import com.cch.entities.enums.StageType;
 import com.cch.services.CompetitionService;
 import com.cch.services.CyclistService;
+import com.cch.services.StageService;
 import com.cch.services.TeamService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,6 +17,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,7 +32,7 @@ public class Main {
 
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
         CompetitionService competitionService = context.getBean(CompetitionService.class);
-
+        StageService stageService = context.getBean(StageService.class);
 //        Team team = new Team("Team F");
 //        teamService.save(team);
 //
@@ -83,12 +87,16 @@ public class Main {
 //            System.out.println("Cyclist with ID " + cyclistIdToDelete + " not found.");
 //        }
 
-        Competition competition1 = new Competition("Tour de France", "France", LocalDate.of(2024, 7, 1), LocalDate.of(2024, 7, 23));
-        Competition savedCompetition = competitionService.saveCompetition(competition1);
+        Competition competition = new Competition("Tour de France", "France", LocalDate.of(2024, 12, 1), LocalDate.of(2025, 2, 23));
+//        Competition competition1 = new Competition("Giro d'Italia", "Italy", LocalDate.of(2025, 5, 6), LocalDate.of(2025, 6, 28));
+        Competition savedCompetition = competitionService.saveCompetition(competition);
         if(savedCompetition != null) {
             System.out.println("Competition saved successfully with ID: " + savedCompetition.getId());
         }else {
             System.out.println("Failed to save competition.");
         }
+
+        Stage stage = new Stage(1, "Paris", "Lyon", LocalDate.of(2024, 6, 1), LocalTime.of(9, 30), StageType.FLAT, competition);
+        stageService.saveStage(stage);
     }
 }
