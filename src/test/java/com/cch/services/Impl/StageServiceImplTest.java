@@ -17,6 +17,7 @@ import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -132,26 +133,25 @@ class StageServiceImplTest {
         Competition competition = new Competition("Tour de France", "France", LocalDate.of(2024, 7, 1), LocalDate.of(2024, 7, 23));
         Stage stage = new Stage(1, "Paris", "Lyon", LocalDate.of(2024, 7, 10), LocalTime.of(9, 0), StageType.FLAT, competition);
 
-        when(stageRepository.getReferenceById(1L)).thenReturn(stage);
+        when(stageRepository.findById(1L)).thenReturn(Optional.of(stage));
 
-        Stage retrievedStage = stageService.getStageById(1L);
+        Optional<Stage> retrievedStageOpt = stageService.getStageById(1L);
 
-        assertNotNull(retrievedStage);
+        assertTrue(retrievedStageOpt.isPresent());
+        Stage retrievedStage = retrievedStageOpt.get();
         assertEquals(1, retrievedStage.getNumber());
         assertEquals("Paris", retrievedStage.getStartLocation());
-        verify(stageRepository, times(1)).getReferenceById(1L);
+        verify(stageRepository, times(1)).findById(1L);
     }
 
     @Test
     void testGetStageByIdNotFound() {
-        when(stageRepository.getReferenceById(999L)).thenThrow(new EntityNotFoundException("Stage non trouvé avec ID 999"));
+        when(stageRepository.findById(999L)).thenReturn(Optional.empty());
 
-        EntityNotFoundException exception = assertThrows(EntityNotFoundException.class, () -> {
-            stageService.getStageById(999L);
-        });
+        Optional<Stage> retrievedStageOpt = stageService.getStageById(999L);
 
-        assertEquals("Stage non trouvé avec ID 999", exception.getMessage());
-        verify(stageRepository, times(1)).getReferenceById(999L);
+        assertFalse(retrievedStageOpt.isPresent());
+        verify(stageRepository, times(1)).findById(999L);
     }
 
     @Test
@@ -161,7 +161,7 @@ class StageServiceImplTest {
         });
 
         assertEquals("ID ne peut pas être null", exception.getMessage());
-        verify(stageRepository, times(0)).getReferenceById(any());
+        verify(stageRepository, times(0)).findById(any());
     }
 
     @Test
@@ -171,7 +171,67 @@ class StageServiceImplTest {
         });
 
         assertEquals("ID ne peut pas être négatif", exception.getMessage());
-        verify(stageRepository, times(0)).getReferenceById(any());
+        verify(stageRepository, times(0)).findById(any());
+    }
+
+    @Test
+    void testUpdateStageSuccess() {
+        Competition competition = new Competition("Tour de France", "France", LocalDate.of(2024, 7, 1), LocalDate.of(2024, 7, 23));
+        Stage existingStage = new Stage(1, "Paris", "Lyon", LocalDate.of(2024, 7, 10), LocalTime.of(9, 0), StageType.FLAT, competition);
+
+        when(stageRepository.save(existingStage)).thenReturn(existingStage);
+
+        Stage updatedStage = stageService.updateStage(existingStage);
+
+        assertNotNull(updatedStage);
+        assertEquals(existingStage.getNumber(), updatedStage.getNumber());
+        verify(stageRepository, times(1)).save(existingStage);
+    }
+
+    @Test
+    void testUpdateStageWithNull() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            stageService.updateStage(null);
+        });
+
+        assertEquals("Stage ne peut pas être null", exception.getMessage());
+        verify(stageRepository, times(0)).save(any());
+    }
+
+
+    @Test
+    void testDeleteStageSuccess() {
+        Long stageId = 1L;
+
+        doNothing().when(stageRepository).deleteById(stageId);
+
+        stageService.deleteStage(stageId);
+
+        verify(stageRepository, times(1)).deleteById(stageId);
+    }
+
+    @Test
+    void testDeleteStageNotFound() {
+        Long stageId = 999L;
+
+        when(stageRepository.existsById(stageId)).thenReturn(false);
+
+        EntityNotFoundException exception = assertThrows(EntityNotFoundException.class, () -> {
+            stageService.deleteStage(stageId);
+        });
+
+        assertEquals("Stage non trouvé avec ID 999", exception.getMessage());
+        verify(stageRepository, times(0)).deleteById(stageId);
+    }
+
+    @Test
+    void testDeleteStageWithNegativeId() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            stageService.deleteStage(-1L);
+        });
+
+        assertEquals("ID ne peut pas être négatif ou nul", exception.getMessage());
+        verify(stageRepository, times(0)).deleteById(any());
     }
 
 
