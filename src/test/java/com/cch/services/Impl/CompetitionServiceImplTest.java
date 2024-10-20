@@ -1,10 +1,7 @@
-package com.cch.services;
+package com.cch.services.Impl;
 
 import com.cch.entities.Competition;
 import com.cch.repositories.CompetitionRepository;
-import com.cch.repositories.CyclistRepository;
-import com.cch.services.Impl.CompetitionServiceImpl;
-import com.cch.services.Impl.CyclistServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -20,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-class CompetitionServiceTest {
+class CompetitionServiceImplTest {
 
     @Mock
     private CompetitionRepository competitionRepository;
