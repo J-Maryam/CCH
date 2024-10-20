@@ -20,19 +20,20 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.Scanner;
 
 @Configuration
 @ComponentScan(basePackages = "com.cch")
 public class Main {
     public static void main(String[] args) {
 
-//        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-//        TeamService teamService = context.getBean(TeamService.class);
-//        CyclistService cyclistService = context.getBean(CyclistService.class);
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        TeamService teamService = context.getBean(TeamService.class);
+        CyclistService cyclistService = context.getBean(CyclistService.class);
 
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
-        CompetitionService competitionService = context.getBean(CompetitionService.class);
-        StageService stageService = context.getBean(StageService.class);
+//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
+//        CompetitionService competitionService = context.getBean(CompetitionService.class);
+//        StageService stageService = context.getBean(StageService.class);
 //        Team team = new Team("Team F");
 //        teamService.save(team);
 //
@@ -46,21 +47,21 @@ public class Main {
 //        }
 
 
-//        List<Cyclist> cyclists = cyclistService.findAll();
-//        if (cyclists.isEmpty()) {
-//            System.out.println("\nNo Cyclists found");
-//        }else {
-//            System.out.println("\nList of Cyclists: ");
-//            for (Cyclist cyclist : cyclists) {
-//                System.out.println("Cyclist Id: " + cyclist.getFName());
-//                System.out.println("First Name: " + cyclist.getFName());
-//                System.out.println("Last Name: " + cyclist.getLName());
-//                System.out.println("Nationality: " + cyclist.getNationality());
-//                System.out.println("Birth Date: " + cyclist.getBirthDate());
-//                System.out.println("Team: " + cyclist.getTeam().getTeam());
-//                System.out.println("-----------------------------");
-//            }
-//        }
+        List<Cyclist> cyclists = cyclistService.findAll();
+        if (cyclists.isEmpty()) {
+            System.out.println("\nNo Cyclists found");
+        } else {
+            System.out.println("\nList of Cyclists: ");
+            for (Cyclist cyclist : cyclists) {
+                System.out.println("Cyclist Id: " + cyclist.getId());
+                System.out.println("First Name: " + cyclist.getFName());
+                System.out.println("Last Name: " + cyclist.getLName());
+                System.out.println("Nationality: " + cyclist.getNationality());
+                System.out.println("Birth Date: " + cyclist.getBirthDate());
+                System.out.println("Team: " + cyclist.getTeam().getTeam());
+                System.out.println("-----------------------------");
+            }
+        }
 
 //        Long cyclistId = 2L;
 //        Optional<Cyclist> foundCyclist = cyclistService.findById(cyclistId);
@@ -87,16 +88,44 @@ public class Main {
 //            System.out.println("Cyclist with ID " + cyclistIdToDelete + " not found.");
 //        }
 
-        Competition competition = new Competition("Tour de France", "France", LocalDate.of(2024, 12, 1), LocalDate.of(2025, 2, 23));
-//        Competition competition1 = new Competition("Giro d'Italia", "Italy", LocalDate.of(2025, 5, 6), LocalDate.of(2025, 6, 28));
-        Competition savedCompetition = competitionService.saveCompetition(competition);
-        if(savedCompetition != null) {
-            System.out.println("Competition saved successfully with ID: " + savedCompetition.getId());
-        }else {
-            System.out.println("Failed to save competition.");
-        }
+//        Competition competition = new Competition("Tour de France", "France", LocalDate.of(2024, 12, 1), LocalDate.of(2025, 2, 23));
+////        Competition competition1 = new Competition("Giro d'Italia", "Italy", LocalDate.of(2025, 5, 6), LocalDate.of(2025, 6, 28));
+//        Competition savedCompetition = competitionService.saveCompetition(competition);
+//        if(savedCompetition != null) {
+//            System.out.println("Competition saved successfully with ID: " + savedCompetition.getId());
+//        }else {
+//            System.out.println("Failed to save competition.");
+//        }
+//
+//        Stage stage = new Stage(1, "Paris", "Lyon", LocalDate.of(2024, 6, 1), LocalTime.of(9, 30), StageType.FLAT, competition);
+//        stageService.saveStage(stage);
 
-        Stage stage = new Stage(1, "Paris", "Lyon", LocalDate.of(2024, 6, 1), LocalTime.of(9, 30), StageType.FLAT, competition);
-        stageService.saveStage(stage);
+        System.out.println("\n===========================================================");
+        String lName = "Russo";
+        String nationality = "UK";
+        Team team = teamService.findByTeamName("Team A");
+//        System.out.println("\nTri Par nom : " + lName);
+//        System.out.println("Tri Par nationalité : " + nationality);
+        System.out.println("Tri Par équipe");
+
+//        List<Cyclist> cyclistsSortedBy = cyclistService.findAllSortedByLastName(lName);
+//        List<Cyclist> cyclistsSortedBy = cyclistService.findAllSortedByNationality(nationality);
+        List<Cyclist> cyclistsSortedBy = cyclistService.findAllSortedByTeam(team);
+
+
+        if (cyclistsSortedBy.isEmpty()) {
+            System.out.println("\nAucun cycliste trouvé");
+        } else {
+            System.out.println("\nListe des cyclistes : ");
+            for (Cyclist cyclist : cyclistsSortedBy) {
+                System.out.println("ID: " + cyclist.getId());
+                System.out.println("Prénom: " + cyclist.getFName());
+                System.out.println("Nom: " + cyclist.getLName());
+                System.out.println("Nationalité: " + cyclist.getNationality());
+                System.out.println("Date de naissance: " + cyclist.getBirthDate());
+                System.out.println("Équipe: " + cyclist.getTeam().getTeam());
+                System.out.println("-----------------------------");
+            }
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.cch.services.Impl;
 
 import com.cch.entities.Cyclist;
+import com.cch.entities.Team;
 import com.cch.repositories.CyclistRepository;
 import com.cch.services.CyclistService;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,6 +51,21 @@ public class CyclistServiceImpl implements CyclistService {
     @Override
     public void deleteById(Long id) {
         cyclistRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Cyclist> findAllSortedByLastName(String lName) {
+        return cyclistRepository.findAllSortedBylName(lName);
+    }
+
+    @Override
+    public List<Cyclist> findAllSortedByNationality(String nationality) {
+        return cyclistRepository.findAllSortedByNationality(nationality);
+    }
+
+    @Override
+    public List<Cyclist> findAllSortedByTeam(Team team) {
+        return cyclistRepository.findAllSortedByTeam(team);
     }
 
 }

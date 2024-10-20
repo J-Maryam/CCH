@@ -20,4 +20,9 @@ public class TeamServiceImpl implements TeamService {
     public Team save(Team team) {
         return teamRepository.save(team);
     }
+
+    @Override
+    public Team findByTeamName(String teamName) {
+        return teamRepository.findByTeam(teamName);
+    }
 }

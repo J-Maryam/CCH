@@ -26,4 +26,11 @@ public class StageResult {
 
     private Duration time;
     private Integer rank;
+
+    public StageResult(Cyclist cyclist, Stage stage, Duration time, Integer rank) {
+        this.cyclist = cyclist;
+        this.stage = stage;
+        this.time = time;
+        this.rank = rank;
+    }
 }
