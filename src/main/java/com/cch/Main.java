@@ -2,15 +2,9 @@ package com.cch;
 
 
 import com.cch.config.AppConfig;
-import com.cch.entities.Competition;
-import com.cch.entities.Cyclist;
-import com.cch.entities.Stage;
-import com.cch.entities.Team;
+import com.cch.entities.*;
 import com.cch.entities.enums.StageType;
-import com.cch.services.CompetitionService;
-import com.cch.services.CyclistService;
-import com.cch.services.StageService;
-import com.cch.services.TeamService;
+import com.cch.services.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -31,12 +25,19 @@ public class Main {
         TeamService teamService = context.getBean(TeamService.class);
         CyclistService cyclistService = context.getBean(CyclistService.class);
 
-//        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
-//        CompetitionService competitionService = context.getBean(CompetitionService.class);
+
+        AnnotationConfigApplicationContext cntx = new AnnotationConfigApplicationContext(Main.class);
+        GeneralResultService generalResultService = cntx.getBean(GeneralResultService.class);
+        CompetitionService competitionService = cntx.getBean(CompetitionService.class);
 //        StageService stageService = context.getBean(StageService.class);
-//        Team team = new Team("Team F");
-//        teamService.save(team);
-//
+
+        Team team = teamService.findByTeamName("Team A");
+        Competition competition = new Competition();
+        competition.setId(5L);
+        Cyclist cyclist = new Cyclist("John", "Doe", "USA", LocalDate.of(2000, 5, 19), team);
+        cyclistService.save(cyclist);
+        generalResultService.inscrireCycliste(competition, cyclist);
+
 //        Cyclist cyclist = new Cyclist("Marry", "Perles", "USA", LocalDate.of(2000, 5, 19), team);
 //        Cyclist savedCyclist = cyclistService.save(cyclist);
 //
@@ -46,22 +47,21 @@ public class Main {
 //            System.out.println("Failed to save cyclist.");
 //        }
 
-
-        List<Cyclist> cyclists = cyclistService.findAll();
-        if (cyclists.isEmpty()) {
-            System.out.println("\nNo Cyclists found");
-        } else {
-            System.out.println("\nList of Cyclists: ");
-            for (Cyclist cyclist : cyclists) {
-                System.out.println("Cyclist Id: " + cyclist.getId());
-                System.out.println("First Name: " + cyclist.getFName());
-                System.out.println("Last Name: " + cyclist.getLName());
-                System.out.println("Nationality: " + cyclist.getNationality());
-                System.out.println("Birth Date: " + cyclist.getBirthDate());
-                System.out.println("Team: " + cyclist.getTeam().getTeam());
-                System.out.println("-----------------------------");
-            }
-        }
+//        List<Cyclist> cyclists = cyclistService.findAll();
+//        if (cyclists.isEmpty()) {
+//            System.out.println("\nNo Cyclists found");
+//        } else {
+//            System.out.println("\nList of Cyclists: ");
+//            for (Cyclist cyclist : cyclists) {
+//                System.out.println("Cyclist Id: " + cyclist.getId());
+//                System.out.println("First Name: " + cyclist.getFName());
+//                System.out.println("Last Name: " + cyclist.getLName());
+//                System.out.println("Nationality: " + cyclist.getNationality());
+//                System.out.println("Birth Date: " + cyclist.getBirthDate());
+//                System.out.println("Team: " + cyclist.getTeam().getTeam());
+//                System.out.println("-----------------------------");
+//            }
+//        }
 
 //        Long cyclistId = 2L;
 //        Optional<Cyclist> foundCyclist = cyclistService.findById(cyclistId);
@@ -100,32 +100,32 @@ public class Main {
 //        Stage stage = new Stage(1, "Paris", "Lyon", LocalDate.of(2024, 6, 1), LocalTime.of(9, 30), StageType.FLAT, competition);
 //        stageService.saveStage(stage);
 
-        System.out.println("\n===========================================================");
-        String lName = "Russo";
-        String nationality = "UK";
-        Team team = teamService.findByTeamName("Team A");
-//        System.out.println("\nTri Par nom : " + lName);
-//        System.out.println("Tri Par nationalité : " + nationality);
-        System.out.println("Tri Par équipe");
-
-//        List<Cyclist> cyclistsSortedBy = cyclistService.findAllSortedByLastName(lName);
-//        List<Cyclist> cyclistsSortedBy = cyclistService.findAllSortedByNationality(nationality);
-        List<Cyclist> cyclistsSortedBy = cyclistService.findAllSortedByTeam(team);
-
-
-        if (cyclistsSortedBy.isEmpty()) {
-            System.out.println("\nAucun cycliste trouvé");
-        } else {
-            System.out.println("\nListe des cyclistes : ");
-            for (Cyclist cyclist : cyclistsSortedBy) {
-                System.out.println("ID: " + cyclist.getId());
-                System.out.println("Prénom: " + cyclist.getFName());
-                System.out.println("Nom: " + cyclist.getLName());
-                System.out.println("Nationalité: " + cyclist.getNationality());
-                System.out.println("Date de naissance: " + cyclist.getBirthDate());
-                System.out.println("Équipe: " + cyclist.getTeam().getTeam());
-                System.out.println("-----------------------------");
-            }
-        }
+//        System.out.println("\n===========================================================");
+//        String lName = "Russo";
+//        String nationality = "UK";
+//        Team team = teamService.findByTeamName("Team A");
+////        System.out.println("\nTri Par nom : " + lName);
+////        System.out.println("Tri Par nationalité : " + nationality);
+//        System.out.println("Tri Par équipe");
+//
+////        List<Cyclist> cyclistsSortedBy = cyclistService.findAllSortedByLastName(lName);
+////        List<Cyclist> cyclistsSortedBy = cyclistService.findAllSortedByNationality(nationality);
+//        List<Cyclist> cyclistsSortedBy = cyclistService.findAllSortedByTeam(team);
+//
+//
+//        if (cyclistsSortedBy.isEmpty()) {
+//            System.out.println("\nAucun cycliste trouvé");
+//        } else {
+//            System.out.println("\nListe des cyclistes : ");
+//            for (Cyclist cyclist : cyclistsSortedBy) {
+//                System.out.println("ID: " + cyclist.getId());
+//                System.out.println("Prénom: " + cyclist.getFName());
+//                System.out.println("Nom: " + cyclist.getLName());
+//                System.out.println("Nationalité: " + cyclist.getNationality());
+//                System.out.println("Date de naissance: " + cyclist.getBirthDate());
+//                System.out.println("Équipe: " + cyclist.getTeam().getTeam());
+//                System.out.println("-----------------------------");
+//            }
+//        }
     }
 }
