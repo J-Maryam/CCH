@@ -34,10 +34,31 @@ public class Main {
         Team team = teamService.findByTeamName("Team A");
         Competition competition = new Competition();
         competition.setId(5L);
-        Cyclist cyclist = new Cyclist("John", "Doe", "USA", LocalDate.of(2000, 5, 19), team);
-        cyclistService.save(cyclist);
-        generalResultService.inscrireCycliste(competition, cyclist);
+        Optional<Competition> foundCompetition = competitionService.findCompetitionById(competition.getId());
+//        Cyclist cyclist = new Cyclist("John", "Doe", "USA", LocalDate.of(2000, 5, 19), team);
+//        cyclistService.save(cyclist);
+//        generalResultService.inscrireCycliste(competition, cyclist);
 
+        if (foundCompetition.isPresent()) {
+            competition = foundCompetition.get();
+
+            List<Cyclist> registeredCyclists = generalResultService.consulterInscrits(competition.getId());
+
+            if (registeredCyclists.isEmpty()) {
+                System.out.println("Aucun cycliste inscrit à la compétition : " + competition.getName());
+            } else {
+                System.out.println("Liste des cyclistes inscrits à la compétition : " + competition.getName());
+                for (Cyclist cyclist : registeredCyclists) {
+                    System.out.println("ID: " + cyclist.getId());
+                    System.out.println("Prénom: " + cyclist.getFName());
+                    System.out.println("Nom: " + cyclist.getLName());
+                    System.out.println("Nationalité: " + cyclist.getNationality());
+                    System.out.println("-----------------------------");
+                }
+            }
+        } else {
+            System.out.println("Compétition avec ID " + competition.getId() + " non trouvée.");
+        }
 //        Cyclist cyclist = new Cyclist("Marry", "Perles", "USA", LocalDate.of(2000, 5, 19), team);
 //        Cyclist savedCyclist = cyclistService.save(cyclist);
 //

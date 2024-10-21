@@ -13,11 +13,12 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDate;
+import java.util.Collections;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 class GeneralResultServiceImplTest {
 
@@ -35,10 +36,6 @@ class GeneralResultServiceImplTest {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
-    }
-
-    @Test
-    public void testInscrireCycliste() {
         competition = new Competition();
         competition.setId(1L);
 
@@ -46,11 +43,25 @@ class GeneralResultServiceImplTest {
         team.setId(1L);
         cyclist = new Cyclist("John", "Doe", "USA", LocalDate.of(2000, 5, 19), team);
 
+    }
+
+    @Test
+    public void testInscrireCycliste() {
         generalResultId = new GeneralResultId();
         generalResultId.setCompetitionId(competition.getId());
         generalResultId.setCyclistId(cyclist.getId());
 
         service.inscrireCycliste(competition, cyclist);
         verify(repo, times(1)).save(any(GeneralResult.class));
+    }
+
+    @Test
+    public void testConsulterInscrits() {
+        when(repo.findAllByCompetitionId(competition.getId()))
+                .thenReturn(Collections.singletonList(new GeneralResult()));
+
+        List<Cyclist> inscrits = service.consulterInscrits(competition.getId());
+
+        assertEquals(1, inscrits.size());
     }
 }

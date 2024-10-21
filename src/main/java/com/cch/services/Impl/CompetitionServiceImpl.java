@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -63,6 +64,11 @@ public class CompetitionServiceImpl implements CompetitionService {
     @Override
     public void deleteCompetition(Long id) {
         competitionRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Competition> findAllCompetitions() {
+        return competitionRepository.findAll();
     }
 
 }
