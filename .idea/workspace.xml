@@ -6,13 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c2d4f88e-f628-43bd-9c18-21b10cf025b8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cch/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cch/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cch/repositories/GeneralResultRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cch/repositories/GeneralResultRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cch/services/CompetitionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cch/services/CompetitionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cch/services/GeneralResultService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cch/services/GeneralResultService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cch/services/Impl/CompetitionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cch/services/Impl/CompetitionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cch/services/Impl/GeneralResultServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cch/services/Impl/GeneralResultServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cch/services/Impl/GeneralResultServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cch/services/Impl/GeneralResultServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +17,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -49,72 +42,72 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "JUnit.CompetitionServiceTest.testCreateCompetitionEndDateBeforeStartDate.executor": "Run",
-    "JUnit.CompetitionServiceTest.testCreateCompetitionValidData.executor": "Run",
-    "JUnit.CompetitionServiceTest.testCreateCompetitionWithFutureDates.executor": "Run",
-    "JUnit.CompetitionServiceTest.testCreateCompetitionWithNullValues.executor": "Run",
-    "JUnit.CompetitionServiceTest.testDeleteCompetitionWithForeignKeyConstraint.executor": "Run",
-    "JUnit.CompetitionServiceTest.testDeleteExistingCompetition.executor": "Run",
-    "JUnit.CompetitionServiceTest.testDeleteNonExistentCompetition.executor": "Run",
-    "JUnit.CompetitionServiceTest.testFindCompetitionById.executor": "Run",
-    "JUnit.CompetitionServiceTest.testFindCompetitionById_NotFound.executor": "Run",
-    "JUnit.CompetitionServiceTest.testUpdateCompetitionValidData.executor": "Run",
-    "JUnit.CompetitionServiceTest.testUpdateCompetitionWithNonExistentId.executor": "Run",
-    "JUnit.CompetitionServiceTest.testUpdateCompetitionWithNullName.executor": "Run",
-    "JUnit.CyclistServiceTest.findAllCyclists_Success.executor": "Run",
-    "JUnit.CyclistServiceTest.testDeleteById_CyclistDoesNotExist.executor": "Run",
-    "JUnit.CyclistServiceTest.testDeleteById_CyclistExists.executor": "Run",
-    "JUnit.CyclistServiceTest.testFindAllSortedByLName_SingleCyclist.executor": "Run",
-    "JUnit.CyclistServiceTest.testFindAllSortedByTeam_SameTeam.executor": "Run",
-    "JUnit.CyclistServiceTest.testFindById_CycleExists.executor": "Run",
-    "JUnit.CyclistServiceTest.testFindById_CyclistDoesNotExist.executor": "Run",
-    "JUnit.CyclistServiceTest.testSaveCyclist.executor": "Run",
-    "JUnit.CyclistServiceTest.testSaveCyclist_EmptyRepository.executor": "Run",
-    "JUnit.CyclistServiceTest.testSaveCyclist_InvalidBirthDate.executor": "Run",
-    "JUnit.CyclistServiceTest.testSaveCyclist_InvalidBirthDate_ShouldThrowException.executor": "Run",
-    "JUnit.CyclistServiceTest.testSaveCyclist_InvalidData_ShouldThrowException.executor": "Run",
-    "JUnit.CyclistServiceTest.testSaveCyclist_InvalidFirstName.executor": "Run",
-    "JUnit.CyclistServiceTest.testSaveCyclist_InvalidFirstName_ShouldThrowException.executor": "Run",
-    "JUnit.CyclistServiceTest.testSaveCyclist_NoTeam_ShouldThrowException.executor": "Run",
-    "JUnit.CyclistServiceTest.testSaveCyclist_NullCyclist_ShouldThrowException.executor": "Run",
-    "JUnit.CyclistServiceTest.testSaveCyclist_Success.executor": "Run",
-    "JUnit.CyclistServiceTest.testSaveCyclist_WithInvalidBirthDate_ShouldThrowValidationException.executor": "Run",
-    "JUnit.GeneralResultServiceImplTest.testConsulterInscrits.executor": "Run",
-    "JUnit.GeneralResultServiceImplTest.testInscrireCycliste.executor": "Run",
-    "JUnit.StageServiceImplTest.testDeleteStageNotFound.executor": "Run",
-    "JUnit.StageServiceImplTest.testDeleteStageSuccess.executor": "Run",
-    "JUnit.StageServiceImplTest.testDeleteStageWithNegativeId.executor": "Run",
-    "JUnit.StageServiceImplTest.testGetAllStagesEmpty.executor": "Run",
-    "JUnit.StageServiceImplTest.testGetAllStagesWithStages.executor": "Run",
-    "JUnit.StageServiceImplTest.testGetStageByIdNotFound.executor": "Run",
-    "JUnit.StageServiceImplTest.testGetStageByIdSuccess.executor": "Run",
-    "JUnit.StageServiceImplTest.testGetStageByIdWithNegativeId.executor": "Run",
-    "JUnit.StageServiceImplTest.testGetStageByIdWithNullId.executor": "Run",
-    "JUnit.StageServiceImplTest.testInvalidStageNumber.executor": "Run",
-    "JUnit.StageServiceImplTest.testNoCompetition.executor": "Run",
-    "JUnit.StageServiceImplTest.testNoStartTime.executor": "Run",
-    "JUnit.StageServiceImplTest.testSameStartAndEndLocation.executor": "Run",
-    "JUnit.StageServiceImplTest.testSaveStage.executor": "Run",
-    "JUnit.StageServiceImplTest.testUpdateStageSuccess.executor": "Run",
-    "JUnit.StageServiceImplTest.testUpdateStageWithNull.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/marya/IdeaProjects/CCH/src/main/java/org/example/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompetitionServiceTest.testCreateCompetitionEndDateBeforeStartDate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompetitionServiceTest.testCreateCompetitionValidData.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompetitionServiceTest.testCreateCompetitionWithFutureDates.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompetitionServiceTest.testCreateCompetitionWithNullValues.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompetitionServiceTest.testDeleteCompetitionWithForeignKeyConstraint.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompetitionServiceTest.testDeleteExistingCompetition.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompetitionServiceTest.testDeleteNonExistentCompetition.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompetitionServiceTest.testFindCompetitionById.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompetitionServiceTest.testFindCompetitionById_NotFound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompetitionServiceTest.testUpdateCompetitionValidData.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompetitionServiceTest.testUpdateCompetitionWithNonExistentId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CompetitionServiceTest.testUpdateCompetitionWithNullName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.findAllCyclists_Success.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testDeleteById_CyclistDoesNotExist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testDeleteById_CyclistExists.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testFindAllSortedByLName_SingleCyclist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testFindAllSortedByTeam_SameTeam.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testFindById_CycleExists.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testFindById_CyclistDoesNotExist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testSaveCyclist.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testSaveCyclist_EmptyRepository.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testSaveCyclist_InvalidBirthDate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testSaveCyclist_InvalidBirthDate_ShouldThrowException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testSaveCyclist_InvalidData_ShouldThrowException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testSaveCyclist_InvalidFirstName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testSaveCyclist_InvalidFirstName_ShouldThrowException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testSaveCyclist_NoTeam_ShouldThrowException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testSaveCyclist_NullCyclist_ShouldThrowException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testSaveCyclist_Success.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CyclistServiceTest.testSaveCyclist_WithInvalidBirthDate_ShouldThrowValidationException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GeneralResultServiceImplTest.testConsulterInscrits.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GeneralResultServiceImplTest.testInscrireCycliste.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testDeleteStageNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testDeleteStageSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testDeleteStageWithNegativeId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testGetAllStagesEmpty.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testGetAllStagesWithStages.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testGetStageByIdNotFound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testGetStageByIdSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testGetStageByIdWithNegativeId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testGetStageByIdWithNullId.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testInvalidStageNumber.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testNoCompetition.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testNoStartTime.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testSameStartAndEndLocation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testSaveStage.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testUpdateStageSuccess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.StageServiceImplTest.testUpdateStageWithNull.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/marya/IdeaProjects/CCH/src/main/java/org/example/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -127,7 +120,7 @@
       <recent name="com.cch.services" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.CyclistServiceImplTest.testFindAllSortedByLName_SingleCyclist">
     <configuration name="CyclistServiceImplTest.testFindAllSortedByLName_SingleCyclist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
@@ -239,7 +232,10 @@
       <workItem from="1729075684390" duration="8924000" />
       <workItem from="1729093555726" duration="9357000" />
       <workItem from="1729162458773" duration="7185000" />
-      <workItem from="1729198183796" duration="52815000" />
+      <workItem from="1729198183796" duration="56152000" />
+      <workItem from="1729681992582" duration="14000" />
+      <workItem from="1729682933931" duration="693000" />
+      <workItem from="1729683857274" duration="424000" />
     </task>
     <servers />
   </component>
