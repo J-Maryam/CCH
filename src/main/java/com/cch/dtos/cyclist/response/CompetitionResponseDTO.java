@@ -1,6 +1,7 @@
 package com.cch.dtos.cyclist.response;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 public record CompetitionResponseDTO(
         Long id,
