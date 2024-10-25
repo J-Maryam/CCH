@@ -1,7 +1,7 @@
 package com.cch.mappers;
 
-import com.cch.dtos.cyclist.request.TeamRequestDTO;
-import com.cch.dtos.cyclist.response.TeamResponseDTO;
+import com.cch.dtos.request.TeamRequestDTO;
+import com.cch.dtos.response.TeamResponseDTO;
 import com.cch.entities.Team;
 import org.mapstruct.Mapper;
 
