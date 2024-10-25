@@ -1,4 +1,4 @@
-package com.cch.dtos.cyclist.request;
+package com.cch.dtos.request;
 
 import jakarta.validation.constraints.NotBlank;
 

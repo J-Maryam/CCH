@@ -1,4 +1,4 @@
-package com.cch.dtos.cyclist.request;
+package com.cch.dtos.request;
 
 import jakarta.validation.constraints.NotNull;
 
@@ -10,4 +10,3 @@ public record GeneralResultRequestDTO(
         @NotNull Duration generalTime,
         @NotNull Integer generalRank
 ) {}
-

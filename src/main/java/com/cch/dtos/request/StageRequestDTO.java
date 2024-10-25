@@ -1,4 +1,4 @@
-package com.cch.dtos.cyclist.request;
+package com.cch.dtos.request;
 
 import com.cch.entities.enums.StageType;
 import jakarta.validation.constraints.NotNull;

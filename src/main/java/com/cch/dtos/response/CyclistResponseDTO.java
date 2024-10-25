@@ -1,4 +1,4 @@
-package com.cch.dtos.cyclist.response;
+package com.cch.dtos.response;
 
 import java.time.LocalDate;
 
@@ -8,6 +8,6 @@ public record CyclistResponseDTO(
         String lName,
         String nationality,
         LocalDate birthDate,
-        String teamName
+        TeamResponseDTO team
 ) {}
 

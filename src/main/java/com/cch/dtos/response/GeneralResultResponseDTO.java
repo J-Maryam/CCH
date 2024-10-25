@@ -1,4 +1,4 @@
-package com.cch.dtos.cyclist.response;
+package com.cch.dtos.response;
 
 import java.time.Duration;
 
@@ -8,6 +8,3 @@ public record GeneralResultResponseDTO(
         Duration generalTime,
         Integer generalRank
 ) {}
-
-
-

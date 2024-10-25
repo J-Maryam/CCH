@@ -1,4 +1,4 @@
-package com.cch.dtos.cyclist.response;
+package com.cch.dtos.response;
 
 import java.time.LocalDate;
 import java.util.Set;
