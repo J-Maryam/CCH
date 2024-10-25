@@ -1,6 +1,7 @@
 package com.cch.config;
 
-import com.cch.entities.Team;
+import com.cch.mappers.CyclistMapper;
+import com.cch.mappers.TeamMapper;
 import com.cch.repositories.CyclistRepository;
 import com.cch.repositories.TeamRepository;
 import com.cch.services.CyclistService;
@@ -68,12 +69,12 @@ public class AppConfig {
         return properties;
     }
     @Bean
-    public CyclistService cyclistService(CyclistRepository cyclistRepository) {
-        return new CyclistServiceImpl(cyclistRepository);
+    public CyclistService cyclistService(CyclistRepository cyclistRepository, CyclistMapper cyclistMapper) {
+        return new CyclistServiceImpl(cyclistRepository, cyclistMapper);
     }
 
     @Bean
-    public TeamService teamService(TeamRepository teamRepository) {
-        return new TeamServiceImpl(teamRepository);
+    public TeamService teamService(TeamRepository teamRepository, TeamMapper teamMapper) {
+        return new TeamServiceImpl(teamRepository, teamMapper);
     }
 }

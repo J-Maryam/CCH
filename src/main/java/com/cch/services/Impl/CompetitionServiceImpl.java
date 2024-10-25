@@ -1,15 +1,19 @@
 package com.cch.services.Impl;
 
+import com.cch.dtos.request.CompetitionRequestDTO;
+import com.cch.dtos.response.CompetitionResponseDTO;
 import com.cch.entities.Competition;
+import com.cch.mappers.CompetitionMapper;
 import com.cch.repositories.CompetitionRepository;
 import com.cch.services.CompetitionService;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -17,58 +21,49 @@ public class CompetitionServiceImpl implements CompetitionService {
 
     @Autowired
     private CompetitionRepository competitionRepository;
+    @Autowired
+    private CompetitionMapper competitionMapper;
 
     @Override
-    public Competition saveCompetition(Competition competition) {
-        if (competition.getName() == null || competition.getName().isEmpty()) {
-            throw new IllegalArgumentException("Name cannot be null");
-        }
-
-        if (competition.getEndDate().isBefore(competition.getStartDate())) {
-            throw new IllegalArgumentException("End date cannot be before start date");
-        }
-
-        if (competition.getStartDate().isBefore(LocalDate.now())) {
-            throw new IllegalArgumentException("Start date must be in the future");
-        }
-
-        return competitionRepository.save(competition);
+    public CompetitionResponseDTO save(CompetitionRequestDTO competitionRequestDTO) {
+        Competition competition = competitionMapper.toEntity(competitionRequestDTO);
+        Competition savedCompetition = competitionRepository.save(competition);
+        return competitionMapper.toResponseDto(savedCompetition);
     }
 
     @Override
-    public Optional<Competition> findCompetitionById(Long id) {
-        return competitionRepository.findById(id);
+    public Optional<CompetitionResponseDTO> getById(Long id) {
+        return competitionRepository.findById(id)
+                .map(competitionMapper::toResponseDto);
     }
 
     @Override
-    public Competition updateCompetition(Competition competition) {
-        if (competition.getId() == null || !competitionRepository.existsById(competition.getId())) {
-            throw new IllegalArgumentException("Competition does not exist");
-        }
-
-        if (competition.getName() == null || competition.getName().isEmpty()) {
-            throw new IllegalArgumentException("Name cannot be null");
-        }
-
-        if (competition.getEndDate().isBefore(competition.getStartDate())) {
-            throw new IllegalArgumentException("End date cannot be before start date");
-        }
-
-        if (competition.getStartDate().isBefore(LocalDate.now())) {
-            throw new IllegalArgumentException("Start date must be in the future");
-        }
-
-        return competitionRepository.save(competition);
+    public List<CompetitionResponseDTO> getAll() {
+        return competitionRepository.findAll()
+                .stream()
+                .map(competitionMapper::toResponseDto)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public void deleteCompetition(Long id) {
+    public CompetitionResponseDTO update(Long id, CompetitionRequestDTO competitionRequestDTO) {
+        Competition existingCompetition = competitionRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Competition with ID " + id + " not found"));
+
+        existingCompetition.setName(competitionRequestDTO.name());
+        existingCompetition.setStartDate(competitionRequestDTO.startDate());
+        existingCompetition.setEndDate(competitionRequestDTO.endDate());
+        existingCompetition.setLocation(competitionRequestDTO.location());
+        Competition updatedCompetition = competitionRepository.save(existingCompetition);
+
+        return competitionMapper.toResponseDto(updatedCompetition);
+    }
+
+    @Override
+    public void delete(Long id) {
+        if (!competitionRepository.existsById(id)) {
+            throw new EntityNotFoundException("Competition with ID " + id + " not found");
+        }
         competitionRepository.deleteById(id);
     }
-
-    @Override
-    public List<Competition> findAllCompetitions() {
-        return competitionRepository.findAll();
-    }
-
 }

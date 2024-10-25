@@ -1,17 +1,14 @@
 package com.cch.services;
 
+import com.cch.dtos.request.CyclistRequestDTO;
+import com.cch.dtos.response.CyclistResponseDTO;
 import com.cch.entities.Cyclist;
 import com.cch.entities.Team;
 
 import java.util.List;
-import java.util.Optional;
 
-public interface CyclistService {
-    Cyclist save(Cyclist cyclist);
-    List<Cyclist> findAll();
-    Optional<Cyclist> findById(Long id);
-    void deleteById(Long id);
-    List<Cyclist> findAllSortedByLastName(String lName);
-    List<Cyclist> findAllSortedByNationality(String nationality);
-    List<Cyclist> findAllSortedByTeam(Team team);
+public interface CyclistService extends GenericService<Cyclist, Long, CyclistRequestDTO, CyclistResponseDTO>{
+    List<CyclistResponseDTO> findAllSortedByLastName(String lName);
+    List<CyclistResponseDTO> findAllSortedByNationality(String nationality);
+    List<CyclistResponseDTO> findAllSortedByTeam(Team team);
 }
