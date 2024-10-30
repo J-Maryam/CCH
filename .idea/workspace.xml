@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CCH:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2d4f88e-f628-43bd-9c18-21b10cf025b8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c2d4f88e-f628-43bd-9c18-21b10cf025b8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -29,6 +32,16 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -42,73 +55,107 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CompetitionServiceTest.testCreateCompetitionEndDateBeforeStartDate.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CompetitionServiceTest.testCreateCompetitionValidData.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CompetitionServiceTest.testCreateCompetitionWithFutureDates.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CompetitionServiceTest.testCreateCompetitionWithNullValues.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CompetitionServiceTest.testDeleteCompetitionWithForeignKeyConstraint.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CompetitionServiceTest.testDeleteExistingCompetition.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CompetitionServiceTest.testDeleteNonExistentCompetition.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CompetitionServiceTest.testFindCompetitionById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CompetitionServiceTest.testFindCompetitionById_NotFound.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CompetitionServiceTest.testUpdateCompetitionValidData.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CompetitionServiceTest.testUpdateCompetitionWithNonExistentId.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CompetitionServiceTest.testUpdateCompetitionWithNullName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.findAllCyclists_Success.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testDeleteById_CyclistDoesNotExist.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testDeleteById_CyclistExists.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testFindAllSortedByLName_SingleCyclist.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testFindAllSortedByTeam_SameTeam.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testFindById_CycleExists.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testFindById_CyclistDoesNotExist.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testSaveCyclist.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testSaveCyclist_EmptyRepository.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testSaveCyclist_InvalidBirthDate.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testSaveCyclist_InvalidBirthDate_ShouldThrowException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testSaveCyclist_InvalidData_ShouldThrowException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testSaveCyclist_InvalidFirstName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testSaveCyclist_InvalidFirstName_ShouldThrowException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testSaveCyclist_NoTeam_ShouldThrowException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testSaveCyclist_NullCyclist_ShouldThrowException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testSaveCyclist_Success.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CyclistServiceTest.testSaveCyclist_WithInvalidBirthDate_ShouldThrowValidationException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GeneralResultServiceImplTest.testConsulterInscrits.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GeneralResultServiceImplTest.testInscrireCycliste.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testDeleteStageNotFound.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testDeleteStageSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testDeleteStageWithNegativeId.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testGetAllStagesEmpty.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testGetAllStagesWithStages.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testGetStageByIdNotFound.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testGetStageByIdSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testGetStageByIdWithNegativeId.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testGetStageByIdWithNullId.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testInvalidStageNumber.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testNoCompetition.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testNoStartTime.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testSameStartAndEndLocation.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testSaveStage.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testUpdateStageSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StageServiceImplTest.testUpdateStageWithNull.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/marya/IdeaProjects/CCH/src/main/java/org/example/Main.java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "JUnit.CompetitionServiceImplTest.testCreateCompetitionValidData.executor": "Run",
+    "JUnit.CompetitionServiceImplTest.testDeleteCompetitionWithForeignKeyConstraint.executor": "Run",
+    "JUnit.CompetitionServiceImplTest.testDeleteNonExistentCompetition.executor": "Run",
+    "JUnit.CompetitionServiceImplTest.testFindCompetitionById_NotFound.executor": "Run",
+    "JUnit.CompetitionServiceImplTest.testUpdateCompetitionWithNonExistentId.executor": "Run",
+    "JUnit.CompetitionServiceTest.testCreateCompetitionEndDateBeforeStartDate.executor": "Run",
+    "JUnit.CompetitionServiceTest.testCreateCompetitionValidData.executor": "Run",
+    "JUnit.CompetitionServiceTest.testCreateCompetitionWithFutureDates.executor": "Run",
+    "JUnit.CompetitionServiceTest.testCreateCompetitionWithNullValues.executor": "Run",
+    "JUnit.CompetitionServiceTest.testDeleteCompetitionWithForeignKeyConstraint.executor": "Run",
+    "JUnit.CompetitionServiceTest.testDeleteExistingCompetition.executor": "Run",
+    "JUnit.CompetitionServiceTest.testDeleteNonExistentCompetition.executor": "Run",
+    "JUnit.CompetitionServiceTest.testFindCompetitionById.executor": "Run",
+    "JUnit.CompetitionServiceTest.testFindCompetitionById_NotFound.executor": "Run",
+    "JUnit.CompetitionServiceTest.testUpdateCompetitionValidData.executor": "Run",
+    "JUnit.CompetitionServiceTest.testUpdateCompetitionWithNonExistentId.executor": "Run",
+    "JUnit.CompetitionServiceTest.testUpdateCompetitionWithNullName.executor": "Run",
+    "JUnit.CyclistServiceImplTest.testDelete_CyclistDoesNotExist.executor": "Run",
+    "JUnit.CyclistServiceImplTest.testDelete_CyclistExists.executor": "Run",
+    "JUnit.CyclistServiceImplTest.testGetAllCyclists_Success.executor": "Run",
+    "JUnit.CyclistServiceImplTest.testGetById_CycleExists.executor": "Run",
+    "JUnit.CyclistServiceImplTest.testGetById_CyclistDoesNotExist.executor": "Run",
+    "JUnit.CyclistServiceImplTest.testSaveCyclist_InvalidBirthDate_ShouldThrowException.executor": "Run",
+    "JUnit.CyclistServiceImplTest.testSaveCyclist_InvalidFirstName_ShouldThrowException.executor": "Run",
+    "JUnit.CyclistServiceImplTest.testSaveCyclist_NoTeam_ShouldThrowException.executor": "Run",
+    "JUnit.CyclistServiceImplTest.testSaveCyclist_Success.executor": "Run",
+    "JUnit.CyclistServiceImplTest.testUpdate_CyclistDoesNotExist.executor": "Run",
+    "JUnit.CyclistServiceImplTest.testUpdate_CyclistExists.executor": "Run",
+    "JUnit.CyclistServiceTest.findAllCyclists_Success.executor": "Run",
+    "JUnit.CyclistServiceTest.testDeleteById_CyclistDoesNotExist.executor": "Run",
+    "JUnit.CyclistServiceTest.testDeleteById_CyclistExists.executor": "Run",
+    "JUnit.CyclistServiceTest.testFindAllSortedByLName_SingleCyclist.executor": "Run",
+    "JUnit.CyclistServiceTest.testFindAllSortedByTeam_SameTeam.executor": "Run",
+    "JUnit.CyclistServiceTest.testFindById_CycleExists.executor": "Run",
+    "JUnit.CyclistServiceTest.testFindById_CyclistDoesNotExist.executor": "Run",
+    "JUnit.CyclistServiceTest.testSaveCyclist.executor": "Run",
+    "JUnit.CyclistServiceTest.testSaveCyclist_EmptyRepository.executor": "Run",
+    "JUnit.CyclistServiceTest.testSaveCyclist_InvalidBirthDate.executor": "Run",
+    "JUnit.CyclistServiceTest.testSaveCyclist_InvalidBirthDate_ShouldThrowException.executor": "Run",
+    "JUnit.CyclistServiceTest.testSaveCyclist_InvalidData_ShouldThrowException.executor": "Run",
+    "JUnit.CyclistServiceTest.testSaveCyclist_InvalidFirstName.executor": "Run",
+    "JUnit.CyclistServiceTest.testSaveCyclist_InvalidFirstName_ShouldThrowException.executor": "Run",
+    "JUnit.CyclistServiceTest.testSaveCyclist_NoTeam_ShouldThrowException.executor": "Run",
+    "JUnit.CyclistServiceTest.testSaveCyclist_NullCyclist_ShouldThrowException.executor": "Run",
+    "JUnit.CyclistServiceTest.testSaveCyclist_Success.executor": "Run",
+    "JUnit.CyclistServiceTest.testSaveCyclist_WithInvalidBirthDate_ShouldThrowValidationException.executor": "Run",
+    "JUnit.GeneralResultServiceImplTest.testConsulterInscrits.executor": "Run",
+    "JUnit.GeneralResultServiceImplTest.testInscrireCycliste.executor": "Run",
+    "JUnit.GeneralResultServiceImplTest.testInscrireCyclisteCompetitionNotFound.executor": "Run",
+    "JUnit.GeneralResultServiceImplTest.testInscrireCyclisteCyclistNotFound.executor": "Run",
+    "JUnit.StageServiceImplTest.testDeleteStageNotFound.executor": "Run",
+    "JUnit.StageServiceImplTest.testDeleteStageSuccess.executor": "Run",
+    "JUnit.StageServiceImplTest.testDeleteStageWithNegativeId.executor": "Run",
+    "JUnit.StageServiceImplTest.testGetAllStages.executor": "Run",
+    "JUnit.StageServiceImplTest.testGetAllStagesEmpty.executor": "Run",
+    "JUnit.StageServiceImplTest.testGetAllStagesWithStages.executor": "Run",
+    "JUnit.StageServiceImplTest.testGetStageByIdNotFound.executor": "Run",
+    "JUnit.StageServiceImplTest.testGetStageByIdSuccess.executor": "Run",
+    "JUnit.StageServiceImplTest.testGetStageByIdWithNegativeId.executor": "Run",
+    "JUnit.StageServiceImplTest.testGetStageByIdWithNullId.executor": "Run",
+    "JUnit.StageServiceImplTest.testInvalidStageNumber (1).executor": "Run",
+    "JUnit.StageServiceImplTest.testInvalidStageNumber.executor": "Run",
+    "JUnit.StageServiceImplTest.testNoCompetition.executor": "Run",
+    "JUnit.StageServiceImplTest.testNoStartTime.executor": "Run",
+    "JUnit.StageServiceImplTest.testSameStartAndEndLocation.executor": "Run",
+    "JUnit.StageServiceImplTest.testSaveStage (1).executor": "Run",
+    "JUnit.StageServiceImplTest.testSaveStage.executor": "Run",
+    "JUnit.StageServiceImplTest.testUpdateStageSuccess.executor": "Run",
+    "JUnit.StageServiceImplTest.testUpdateStageWithNull.executor": "Run",
+    "Maven.CCH [clean,install].executor": "Run",
+    "Maven.CCH [clean].executor": "Run",
+    "Maven.CCH [compile].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.1.30.executor": "Run",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/marya/IdeaProjects/CCH/src/main/webapp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/marya/IdeaProjects/CCH/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\marya\IdeaProjects\CCH\src\main\webapp" />
+      <recent name="C:\Users\marya\IdeaProjects\CCH\src\main\java\com\cch\dtos\cyclist" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
@@ -119,9 +166,30 @@
       <recent name="com.cch.services.Impl" />
       <recent name="com.cch.services" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cch.dtos.response" />
+      <recent name="com.cch.services.Impl" />
+      <recent name="com.cch.services" />
+      <recent name="com.cch.controllers" />
+      <recent name="com.cch.mappers" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.CyclistServiceImplTest.testFindAllSortedByLName_SingleCyclist">
-    <configuration name="CyclistServiceImplTest.testFindAllSortedByLName_SingleCyclist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean" />
+      <command value="mvn clean " />
+      <command value="mvn clean install" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.30">
+    <configuration name="CompetitionServiceImplTest.testFindCompetitionById_NotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -130,40 +198,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services.Impl" />
-      <option name="MAIN_CLASS_NAME" value="com.cch.services.Impl.CyclistServiceImplTest" />
-      <option name="METHOD_NAME" value="testFindAllSortedByLName_SingleCyclist" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CyclistServiceImplTest.testFindAllSortedByTeam_SameTeam" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CCH" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cch.services.Impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.cch.services.Impl" />
-      <option name="MAIN_CLASS_NAME" value="com.cch.services.Impl.CyclistServiceImplTest" />
-      <option name="METHOD_NAME" value="testFindAllSortedByTeam_SameTeam" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeneralResultServiceImplTest.testConsulterInscrits" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CCH" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cch.services.Impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.cch.services.Impl" />
-      <option name="MAIN_CLASS_NAME" value="com.cch.services.Impl.GeneralResultServiceImplTest" />
-      <option name="METHOD_NAME" value="testConsulterInscrits" />
+      <option name="MAIN_CLASS_NAME" value="com.cch.services.Impl.CompetitionServiceImplTest" />
+      <option name="METHOD_NAME" value="testFindCompetitionById_NotFound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -185,7 +221,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StageServiceImplTest.testDeleteStageNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StageServiceImplTest.testInvalidStageNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CCH" />
       <extension name="coverage">
         <pattern>
@@ -195,19 +231,146 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cch.services.Impl" />
       <option name="MAIN_CLASS_NAME" value="com.cch.services.Impl.StageServiceImplTest" />
-      <option name="METHOD_NAME" value="testDeleteStageNotFound" />
+      <option name="METHOD_NAME" value="testInvalidStageNumber" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StageServiceImplTest.testSameStartAndEndLocation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cch.services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cch.services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="com.cch.services.Impl.StageServiceImplTest" />
+      <option name="METHOD_NAME" value="testSameStartAndEndLocation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StageServiceImplTest.testSaveStage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CCH" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cch.services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cch.services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="com.cch.services.Impl.StageServiceImplTest" />
+      <option name="METHOD_NAME" value="testSaveStage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 10.1.30" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.30" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="CCH:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/CCH_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="4ee1cdd4-90a4-48b5-846e-0b0b1a0c7f2c" />
+      </server-settings>
+      <log_file alias="Tomcat Manager Log" path="%IDEA_RUN:CATALINA_BASE%/logs/manager.*" />
+      <log_file alias="Tomcat Host Manager Log" path="%IDEA_RUN:CATALINA_BASE%/logs/host-manager.*" />
+      <log_file alias="Tomcat Localhost Access Log" path="%IDEA_RUN:CATALINA_BASE%/logs/localhost_access_log.*" />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="63257" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="CCH:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.CompetitionServiceImplTest.testFindCompetitionById_NotFound" />
+      <item itemvalue="JUnit.GeneralResultServiceImplTest.testInscrireCycliste" />
+      <item itemvalue="JUnit.StageServiceImplTest.testInvalidStageNumber" />
+      <item itemvalue="JUnit.StageServiceImplTest.testSameStartAndEndLocation" />
+      <item itemvalue="JUnit.StageServiceImplTest.testSaveStage" />
+      <item itemvalue="Tomcat Server.Tomcat 10.1.30" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CompetitionServiceImplTest.testFindCompetitionById_NotFound" />
         <item itemvalue="JUnit.GeneralResultServiceImplTest.testInscrireCycliste" />
-        <item itemvalue="JUnit.GeneralResultServiceImplTest.testConsulterInscrits" />
-        <item itemvalue="JUnit.CyclistServiceImplTest.testFindAllSortedByTeam_SameTeam" />
-        <item itemvalue="JUnit.CyclistServiceImplTest.testFindAllSortedByLName_SingleCyclist" />
-        <item itemvalue="JUnit.StageServiceImplTest.testDeleteStageNotFound" />
+        <item itemvalue="JUnit.StageServiceImplTest.testSameStartAndEndLocation" />
+        <item itemvalue="JUnit.StageServiceImplTest.testInvalidStageNumber" />
+        <item itemvalue="JUnit.StageServiceImplTest.testSaveStage" />
       </list>
     </recent_temporary>
   </component>
@@ -235,11 +398,37 @@
       <workItem from="1729198183796" duration="56152000" />
       <workItem from="1729681992582" duration="14000" />
       <workItem from="1729682933931" duration="693000" />
-      <workItem from="1729683857274" duration="424000" />
+      <workItem from="1729683857274" duration="46236000" />
+      <workItem from="1729866512066" duration="6397000" />
+      <workItem from="1729877210779" duration="327000" />
+      <workItem from="1729880849173" duration="11001000" />
+      <workItem from="1729954210839" duration="3444000" />
+      <workItem from="1730026554186" duration="46379000" />
+      <workItem from="1730200174782" duration="39359000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/cch/services/Impl/StageServiceImplTest.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/cch/services/Impl/StageServiceImplTest.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
