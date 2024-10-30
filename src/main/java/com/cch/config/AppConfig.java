@@ -11,6 +11,7 @@ import com.cch.services.TeamService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -22,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-//@ComponentScan(basePackages = "com.cch")
+@ComponentScan(basePackages = "com.cch")
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "com.cch.repositories")
@@ -30,6 +31,8 @@ public class AppConfig {
 
     @Bean
     public DataSource dataSource() {
+        System.out.println("the app config is invoked ");
+
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl("jdbc:postgresql://localhost:5432/cch");
@@ -67,14 +70,5 @@ public class AppConfig {
         properties.setProperty("hibernate.show_sql", "true");
         properties.setProperty("hibernate.format_sql", "true");
         return properties;
-    }
-    @Bean
-    public CyclistService cyclistService(CyclistRepository cyclistRepository, CyclistMapper cyclistMapper) {
-        return new CyclistServiceImpl(cyclistRepository, cyclistMapper);
-    }
-
-    @Bean
-    public TeamService teamService(TeamRepository teamRepository, TeamMapper teamMapper) {
-        return new TeamServiceImpl(teamRepository, teamMapper);
     }
 }
