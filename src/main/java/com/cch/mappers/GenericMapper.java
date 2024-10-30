@@ -1,7 +1,7 @@
 package com.cch.mappers;
-import org.mapstruct.Mapper;
+import org.mapstruct.MapperConfig;
 
-@Mapper(componentModel = "spring")
+@MapperConfig(componentModel = "spring")
 public interface GenericMapper<Entity, RequestDTO, ResponseDTO> {
     ResponseDTO toResponseDto(Entity entity);
     Entity toEntity(RequestDTO requestDTO);
