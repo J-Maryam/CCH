@@ -14,8 +14,6 @@ public record StageResponseDTO(
         LocalDate date,
         LocalTime startTime,
         StageType stageType,
-        CompetitionResponseDTO competition,
-        Set<StageResultResponseDTO> results
+        CompetitionDTO competition,
+        Set<StageResultDTO> results
 ) {}
-
-

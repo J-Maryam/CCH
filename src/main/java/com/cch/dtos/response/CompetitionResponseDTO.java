@@ -9,7 +9,7 @@ public record CompetitionResponseDTO(
         LocalDate startDate,
         LocalDate endDate,
         String location,
-        Set<StageResponseDTO> stages
+        Set<StageDTO> stages
 ) {}
 
 

@@ -3,11 +3,8 @@ package com.cch.dtos.response;
 import java.time.Duration;
 
 public record StageResultResponseDTO(
-        CyclistResponseDTO cyclist,
-        StageResponseDTO stage,
+        CyclistDTO cyclist,
+        StageDTO stage,
         Duration time,
         Integer rank
 ) {}
-
-
-

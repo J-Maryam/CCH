@@ -8,6 +8,5 @@ public record CyclistResponseDTO(
         String lName,
         String nationality,
         LocalDate birthDate,
-        TeamResponseDTO team
+        TeamDTO team
 ) {}
-
