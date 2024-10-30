@@ -5,5 +5,4 @@ import com.cch.dtos.response.TeamResponseDTO;
 import com.cch.entities.Team;
 
 public interface TeamService extends GenericService<Team, Long, TeamRequestDTO, TeamResponseDTO>{
-    TeamResponseDTO findByTeamName(String teamName);
 }

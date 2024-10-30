@@ -8,8 +8,10 @@ import com.cch.entities.embeddebals.GeneralResultId;
 
 import java.util.List;
 
-public interface GeneralResultService extends GenericService<GeneralResult, GeneralResultId, GeneralResultRequestDTO, GeneralResultResponseDTO>{
+public interface GeneralResultService {
     GeneralResultResponseDTO inscrireCycliste(GeneralResultRequestDTO requestDTO);
-    List<CyclistResponseDTO> consulterInscrits(Long competitionId);
-    void retirerCycliste(GeneralResultId generalResultId);
+    List<GeneralResultResponseDTO> consulterInscrits();
+    GeneralResultResponseDTO getGeneralResultById(GeneralResultId id);
+    GeneralResultResponseDTO updateGeneralResult(GeneralResultId id, GeneralResultRequestDTO requestDTO) ;
+    void retirerCycliste(GeneralResultId id);
 }

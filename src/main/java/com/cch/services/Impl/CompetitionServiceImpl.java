@@ -7,9 +7,10 @@ import com.cch.mappers.CompetitionMapper;
 import com.cch.repositories.CompetitionRepository;
 import com.cch.services.CompetitionService;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,12 +18,12 @@ import java.util.stream.Collectors;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
+@Validated
 public class CompetitionServiceImpl implements CompetitionService {
 
-    @Autowired
-    private CompetitionRepository competitionRepository;
-    @Autowired
-    private CompetitionMapper competitionMapper;
+    private final CompetitionRepository competitionRepository;
+    private final CompetitionMapper competitionMapper;
 
     @Override
     public CompetitionResponseDTO save(CompetitionRequestDTO competitionRequestDTO) {
@@ -33,6 +34,9 @@ public class CompetitionServiceImpl implements CompetitionService {
 
     @Override
     public Optional<CompetitionResponseDTO> getById(Long id) {
+        if (!competitionRepository.existsById(id)) {
+            throw new EntityNotFoundException("Competition with ID " + id + " not found");
+        }
         return competitionRepository.findById(id)
                 .map(competitionMapper::toResponseDto);
     }
@@ -42,7 +46,7 @@ public class CompetitionServiceImpl implements CompetitionService {
         return competitionRepository.findAll()
                 .stream()
                 .map(competitionMapper::toResponseDto)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     @Override
