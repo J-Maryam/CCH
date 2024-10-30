@@ -1,12 +1,12 @@
 package com.cch.dtos.request;
 
+import com.cch.entities.embeddebals.GeneralResultId;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.Duration;
 
 public record GeneralResultRequestDTO(
-        @NotNull Long cyclistId,
-        @NotNull Long competitionId,
-        @NotNull Duration generalTime,
-        @NotNull Integer generalRank
+        @NotNull GeneralResultId id,
+        Duration generalTime,
+        Integer generalRank
 ) {}
