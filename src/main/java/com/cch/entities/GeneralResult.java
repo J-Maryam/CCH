@@ -2,15 +2,17 @@ package com.cch.entities;
 
 
 import com.cch.entities.embeddebals.GeneralResultId;
+import com.cch.services.GeneralResultService;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.Duration;
 
-@Data
+@Getter
+@Setter
 @Entity
 @NoArgsConstructor
+@AllArgsConstructor
 public class GeneralResult {
 
     @EmbeddedId
@@ -28,4 +30,11 @@ public class GeneralResult {
 
     private Duration generalTime;
     private Integer generalRank;
+
+public GeneralResult(Cyclist cyclist, Competition competition) {
+    this.id = new GeneralResultId(competition.getId(), cyclist.getId());
+    this.competition = competition;
+    this.cyclist = cyclist;
+}
+
 }

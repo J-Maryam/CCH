@@ -2,14 +2,18 @@ package com.cch.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 @NoArgsConstructor
 public class Competition {
@@ -21,10 +25,10 @@ public class Competition {
     @NotBlank(message = "Le nom de la compétition ne doit pas être vide")
     private String name;
 
-    @NotBlank(message = "La date de début ne doit pas être vide")
+    @NotNull(message = "La date de début ne doit pas être vide")
     private LocalDate startDate;
 
-    @NotBlank(message = "La date de fin ne doit pas être vide")
+    @NotNull(message = "La date de fin ne doit pas être vide")
     private LocalDate endDate;
 
     @NotBlank(message = "La localisation ne doit pas être vide")

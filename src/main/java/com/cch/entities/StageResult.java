@@ -2,13 +2,17 @@ package com.cch.entities;
 
 import com.cch.entities.embeddebals.StageResultId;
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.*;
+
 import java.time.Duration;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @Entity
+@AllArgsConstructor
 public class StageResult {
 
     @EmbeddedId
@@ -24,13 +28,14 @@ public class StageResult {
     @JoinColumn(name = "stage_id")
     private Stage stage;
 
+    @NotNull
     private Duration time;
     private Integer rank;
 
-    public StageResult(Cyclist cyclist, Stage stage, Duration time, Integer rank) {
+    public StageResult(Cyclist cyclist, Stage stage, Duration time) {
+        this.id = new StageResultId(cyclist.getId(), stage.getId());
         this.cyclist = cyclist;
         this.stage = stage;
         this.time = time;
-        this.rank = rank;
     }
 }

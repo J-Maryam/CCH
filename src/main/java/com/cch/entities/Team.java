@@ -4,12 +4,15 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Entity
 @NoArgsConstructor
 public class Team {
@@ -20,9 +23,10 @@ public class Team {
 
     @NotBlank
     @Size(min = 2, max = 50)
+    @Column(unique = true)
     private String team;
 
-    @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Cyclist> cyclists = new HashSet<>();
 
     public Team(String team) {
